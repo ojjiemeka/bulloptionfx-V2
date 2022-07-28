@@ -12,6 +12,7 @@ import { PortfolioComponent } from './pages/user/portfolio/portfolio.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
 import { TradeComponent } from './pages/user/trade/trade.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   // { path: '', component: WelcomeComponent },
@@ -19,14 +20,14 @@ const routes: Routes = [
   { path: 'index', component: WelcomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'dashboard', component: HomeComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'trade', component: TradeComponent },
-  { path: 'plans', component: PlansComponent },
-  { path: 'portfolio', component: PortfolioComponent },
-  { path: 'edit-profile/:id', component: EditProfileComponent },
-  { path: 'history', component: HistoryComponent },
-  { path: 'support', component: SupportComponent },
+  { path: 'dashboard', component: HomeComponent, canActivate:[AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate:[AuthGuard] },
+  { path: 'trade', component: TradeComponent, canActivate:[AuthGuard] },
+  { path: 'plans', component: PlansComponent, canActivate:[AuthGuard] },
+  { path: 'portfolio', component: PortfolioComponent, canActivate:[AuthGuard] },
+  { path: 'edit-profile/:id', component: EditProfileComponent, canActivate:[AuthGuard] },
+  { path: 'history', component: HistoryComponent, canActivate:[AuthGuard] },
+  { path: 'support', component: SupportComponent, canActivate:[AuthGuard] },
   
   /* This is a wildcard route. It will match any route that is not defined. */
   { path: '**', component: ErrorComponent}

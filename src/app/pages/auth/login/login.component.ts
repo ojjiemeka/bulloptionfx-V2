@@ -59,17 +59,19 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe({
      
       next: user => {
-        this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.responseHandler(user);
         // this.reloadPage();
+        this.router.navigate(['/dashboard']);
+
         if(user){
           // alert('Login Successful');
           this.toast.success('Login Successful');
           this.loginForm.reset();
           this.token.handleToken(user.token);
           localStorage.setItem('userInfo', JSON.stringify(user));
-          this.router.navigate(['/dashboard']);
+          localStorage.setItem('isLoggedIn', JSON.stringify(this.isLoggedIn));
+          // this.router.navigate(['/dashboard']);
           // return user;
           // console.log(user.token);
           // console.log(user);

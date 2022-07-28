@@ -64,19 +64,19 @@
 }
 
 .bull-logo {
-    transform: scale(7.5);
     position: absolute;
-    top: 51px;
-    left: 89%;
+    top: 0.1em;
+    left: 70%;
+    width: 30%;
+    transform: scale(0.6);
 }
 
 .login-logo {
     display: flex;
     position: relative;
-    top: 13em;
-    bottom: 0;
-    left: 10em;
-    transform: scale(17.5);
+    /* bottom: 0; */
+    left: -18em;
+    transform: scale(0.4);
 }
 
 .rounded-btn {
@@ -90,68 +90,76 @@
 @media only screen and (max-width: 768px) {
     .login-logo {
         position: absolute;
-        top: 1.1em;
-        left: 50%;
-        transform: scale(6.5);
+        top: 0.1em;
+        left: 90%;
+        width: 50%;
+        transform: scale(1.1);
     }
     .bull-logo {
         position: absolute;
-        top: 45px;
-        left: 85%;
-        transform: scale(7.5);
+        top: 23px;
+        left: 70%;
+        width: 100px;
+        transform: scale(1.0);
     }
 }
 
 @media only screen and (max-width: 425px) {
     .login-logo {
         position: absolute;
-        top: 1.1em;
-        left: 50%;
-        transform: scale(6.5);
+        top: 0.1em;
+        left: 60%;
+        width: 50%;
+        transform: scale(0.6);
     }
     .carousel-under {
         display: none;
     }
     .bull-logo {
         position: absolute;
-        top: 70px;
-        left: 75%;
-        transform: scale(6.5);
+        top: 23px;
+        left: 70%;
+        width: 100px;
+        transform: scale(1.0);
     }
 }
 
 @media only screen and (max-width: 375px) {
     .login-logo {
         position: absolute;
-        top: 1.1em;
-        left: 50%;
-        transform: scale(6.5);
+        top: 0.1em;
+        left: 60%;
+        width: 50%;
+        transform: scale(0.7);
     }
     .carousel-under {
         display: none;
     }
     .bull-logo {
         position: absolute;
-        top: 75px;
-        left: 79%;
-        transform: scale(5.5);
+        top: 23px;
+        left: 65%;
+        width: 100px;
+        transform: scale(0.9);
     }
 }
 
 @media only screen and (max-width: 320px) {
     .login-logo {
         position: absolute;
-        top: 1.1em;
-        left: 50%;
-        transform: scale(6.5);
+        top: 0.1em;
+        left: 60%;
+        width: 50%;
+        transform: scale(0.8);
     }
     .carousel-under {
         display: none;
     }
     .bull-logo {
         position: absolute;
-        top: 75px;
-        left: 50%;
-        transform: scale(4.5);
+        top: 23px;
+        left: 60%;
+        width: 100px;
+        transform: scale(0.9);
     }
 }

@@ -24,6 +24,14 @@ export class AuthService {
     return this.http.post<any>(this.$base_URL +'/login/', data);
   }
 
+  /**
+   * If the accessToken is truthy, return true, otherwise return false
+   * @returns A boolean value.
+   */
+  isLoggedIn(){
+    return !!this.accessToken;
+  }
+
   getUser(){
     const httpOptions = { 
       headers: new HttpHeaders({
@@ -34,6 +42,12 @@ export class AuthService {
     return this.http.get<any>(this.$base_URL +'/home/', httpOptions);
   }
 
+  /**
+   * This function takes in an id and a body, and then returns an observable of type any
+   * @param {any} id - The id of the user you want to update
+   * @param {any} body - This is the data that you want to update.
+   * @returns The updated user object.
+   */
   updateUser(id: any, body: any){
     const httpOptions = { 
       headers: new HttpHeaders({
@@ -45,6 +59,11 @@ export class AuthService {
     return this.http.put<any>(this.$base_URL +'/profiles/'+id, body, httpOptions);
   }
 
+  /**
+   * The function takes the access token from the local storage and sends it to the backend to be
+   * destroyed
+   * @returns The access token is being returned.
+   */
   logout(){
     const httpOptions = { 
       headers: new HttpHeaders({
