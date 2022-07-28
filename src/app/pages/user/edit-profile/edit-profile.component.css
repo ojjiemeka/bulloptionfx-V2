@@ -1,3 +1,18 @@
 .disabled-text {
     color: #cfd1e1 !important;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    font-family: Nunito, sans-serif !important;
+}
+
+h6 {
+    font-size: 15px;
+}

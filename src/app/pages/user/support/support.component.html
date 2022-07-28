@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<div class="wrapper">
+
+    <div class="page-toolbar px-xl-4 px-sm-2 px-0 py-3">
+        <div class="container-fluid">
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col">
+                    <ol class="breadcrumb bg-transparent mb-0">
+                        <li class="breadcrumb-item"><a class="text-secondary" href="/">Home</a></li>
+                        <!-- <li class="breadcrumb-item"><a class="text-secondary" href="crafted-page.html">Crafted pages</a></li> -->
+                        <li class="breadcrumb-item active" aria-current="page">Support</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, {{UserProfile.fname}}</h1>
+                    <!-- <small class="text-muted">You have 12 new messages and 7 new notifications.</small> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-body px-xl-4 px-sm-2 px-0 py-lg-2 py-1 mt-0 mt-lg-3">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <form [formGroup]="supportForm" (ngSubmit)="supportBtn()">
+                                <h6 class="pb-2 mb-4 border-bottom">Need a support? Send us a message</h6>
+                                <div class="mb-3">
+                                    <label class="form-label">Email address</label>
+                                    <input type="email" formControlName="email" class="form-control" placeholder="name@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Title</label>
+                                    <input type="text" formControlName="title" class="form-control" placeholder="name@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Enter description</label>
+                                    <textarea class="form-control" formControlName="description" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-outline-primary lift">Send Support</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

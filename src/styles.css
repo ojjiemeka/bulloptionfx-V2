@@ -7,5 +7,13 @@
 @import url('./assets/vendors/slick/slick-theme.css');
 @import url('./assets/vendors/vmap/jqvmap.min.css');
 @import url('./assets/css/app.min.css'); */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Nunito, sans-serif !important;
+}

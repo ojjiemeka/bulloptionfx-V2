@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +13,12 @@ export class HeaderComponent implements OnInit {
   toggle:boolean = true;
   container: any
   
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private toast: HotToastService,
+    private router: Router,
+
+  ) { }
 
 
   ngOnInit(): void {
@@ -21,7 +29,15 @@ export class HeaderComponent implements OnInit {
     this.toggle = !this.toggle;
   }
 
-  logout(){
-    
+  logoutBtn(){
+    this.authService.logout().subscribe(
+      data => {
+        // this.toast.show(data.message);
+        // localStorage.clear();
+        // this.router.navigate(['/login']);
+        console.log(data)
+      }
+    )
+    console.log('clicked')
   }
 }

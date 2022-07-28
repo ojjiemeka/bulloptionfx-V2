@@ -57,30 +57,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   });
   }
 
-//   getBannerData(){
-//     this.coinApi.getTrendingCurrency('usd').subscribe(res =>{
-//         console.log(res);
-//     })
-//   }
-
-//   getAllData(){
-//     this.coinApi.getCurrency('usd').subscribe(data => {
-//         console.log(data);
-//         }
-//     )
-//   }
+getUserData(){
+  this.UserProfile = (this.userDataService.getLocalUser());
+    // console.log(this.UserProfile)  
+}
 
 // getUserData(){
-//   this.UserProfile = (this.userDataService.getLocalUser());
+//   this.authService.getUser().subscribe(user =>{
+//     this.UserProfile = user.user;
 //     // console.log(this.UserProfile)  
+//   });
 // }
-
-getUserData(){
-  this.authService.getUser().subscribe(user =>{
-    this.UserProfile = user.user;
-    // console.log(this.UserProfile)  
-  });
-}
 
 getCryptoData(){
     this.coinApi.getCoinData().subscribe(res => {

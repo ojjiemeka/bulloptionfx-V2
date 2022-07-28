@@ -25,6 +25,18 @@ h6 {
     font-size: 1em !important;
 }
 
-h6 {
+h6,
+h4 {
     font-weight: 500 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    font-family: Nunito, sans-serif !important;
 }

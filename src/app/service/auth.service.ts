@@ -45,4 +45,15 @@ export class AuthService {
     return this.http.put<any>(this.$base_URL +'/profiles/'+id, body, httpOptions);
   }
 
+  logout(){
+    const httpOptions = { 
+      headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.accessToken
+        })
+      };
+  
+      return this.http.post<any>(this.$base_URL +'/logout', httpOptions);
+  }
+
 }

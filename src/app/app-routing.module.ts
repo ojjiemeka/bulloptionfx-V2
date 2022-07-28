@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { ErrorComponent } from './pages/errors/error/error.component';
+import { SupportComponent } from './pages/user/support/support.component';
 import { EditProfileComponent } from './pages/user/edit-profile/edit-profile.component';
 import { HistoryComponent } from './pages/user/history/history.component';
 import { HomeComponent } from './pages/user/home/home.component';
@@ -21,10 +22,11 @@ const routes: Routes = [
   { path: 'dashboard', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'trade', component: TradeComponent },
-  { path: 'billing', component: PlansComponent },
+  { path: 'plans', component: PlansComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'edit-profile/:id', component: EditProfileComponent },
   { path: 'history', component: HistoryComponent },
+  { path: 'support', component: SupportComponent },
   
   /* This is a wildcard route. It will match any route that is not defined. */
   { path: '**', component: ErrorComponent}

@@ -23,6 +23,7 @@ import { NetworkInterceptor } from './utils/network.interceptor';
 import { LoadingSpinnerComponent } from './pages/inc/loading-spinner/loading-spinner.component';
 import { TradeComponent } from './pages/user/trade/trade.component';
 import { HistoryComponent } from './pages/user/history/history.component';
+import { SupportComponent } from './pages/user/support/support.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { HistoryComponent } from './pages/user/history/history.component';
     AuthFooterComponent,
     LoadingSpinnerComponent,
     TradeComponent,
-    HistoryComponent
+    HistoryComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,

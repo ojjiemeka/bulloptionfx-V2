@@ -12,8 +12,51 @@
     border: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    font-family: Nunito, sans-serif !important;
+}
+
 h6 {
     /* font-variant: diagonal-fractions; */
     font-size: 15px !important;
     color: #fff;
+}
+
+.bull-logo-light {
+    width: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    .bull-logo-light {
+        position: relative;
+        left: 13.5em;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .bull-logo-light {
+        position: relative;
+        left: 4.5em;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .bull-logo-light {
+        position: relative;
+        left: 3.5em;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .bull-logo-light {
+        position: relative;
+        left: 1.5em;
+    }
 }
