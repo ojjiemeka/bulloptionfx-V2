@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div class="wrapper">
+
+    <div class="page-toolbar px-xl-4 px-sm-2 px-0 py-3">
+        <div class="container-fluid">
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col">
+                    <ol class="breadcrumb bg-transparent mb-0">
+                        <li class="breadcrumb-item"><a class="text-secondary" href="/">Home</a></li>
+                        <!-- <li class="breadcrumb-item"><a class="text-secondary" href="crafted-page.html">Crafted pages</a></li> -->
+                        <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, {{UserProfile.fname}}</h1>
+                    <!-- <small class="text-muted">You have 12 new messages and 7 new notifications.</small> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-body px-xl-4 px-sm-2 px-0 py-lg-2 py-1 mt-0 mt-lg-3">
+        <div class="container-fluid">
+            <div class="row g-3 row-deck mb-5">
+                <div class="col col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="d-flex align-items-center"><i class='bx bxs-info-circle text-info bx-flashing bx-sm'></i> &nbsp; Please rotate device to get full viewing experience</p>
+                        </div>
+                        <div class="card-body text-center balance">
+                            <div class="p-4 col" style="margin-left:-30px">
+                                <iframe src="https://trade.mql5.com/trade" name="WebTrader" title="Subscription Trade" frameborder="0" style="display: block; border: none; height: 300px; width: 100%;"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,18 @@
+.form-control {
+    font-weight: 500;
+    color: #212529 !important;
+    background-color: #E7EFFD! important;
+}
+
+img {
+    filter: none
+}
+
+a:hover {
+    color: #d3a94f;
+}
+
+button:hover,
+img:hover {
+    filter: saturate(0.6);
+}

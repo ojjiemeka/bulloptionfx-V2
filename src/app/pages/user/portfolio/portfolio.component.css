@@ -1,0 +1,30 @@
+.title-text {
+    font-weight: bold;
+}
+
+.title-sub-text {
+    font-size: 14px;
+}
+
+.copy-btn {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: none;
+}
+
+.copy-btn:hover {
+    color: cornflowerblue;
+}
+
+.indicator {
+    font-size: 15px;
+}
+
+.balance {
+    font-variant: diagonal-fractions;
+}
+
+h6 {
+    font-size: 1em !important;
+}

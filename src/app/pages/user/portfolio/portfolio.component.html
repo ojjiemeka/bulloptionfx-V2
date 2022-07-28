@@ -1,0 +1,157 @@
+<app-header></app-header>
+
+<div class="wrapper">
+
+    <div class="page-toolbar px-xl-4 px-sm-2 px-0 py-3">
+        <div class="container-fluid">
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col">
+                    <ol class="breadcrumb bg-transparent mb-0">
+                        <li class="breadcrumb-item"><a class="text-secondary" href="/dashboard">Home</a></li>
+                        <!-- <li class="breadcrumb-item"><a class="text-secondary" href="crafted-page.html">Crafted pages</a></li> -->
+                        <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, {{UserProfile.fname}}</h1>
+                    <!-- <small class="text-muted">You have 12 new messages and 7 new notifications.</small> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-body px-xl-4 px-sm-2 px-0 py-lg-2 py-1 mt-0 mt-lg-3">
+        <div class="container-fluid">
+            <div class="row g-3 row-deck mb-5">
+                <div class="col col-lg-6 col-md-6">
+                    <div class="row g-3 row-deck">
+                        <div class=" col-md-12">
+                            <div class="card">
+                                <div class="card-body text-center balance">
+                                    <div>
+                                        <img class=" avatar xl rounded-circle mb-3 " src="../assets/img/profile_av.png " alt="avatar lg " title=" ">
+                                    </div>
+                                    <div>
+                                        <span class="h2 d-block ">${{UserProfile.balance}}
+                                            </span>
+                                        <div class="text-muted text-uppercase "> Balance</div>
+                                    </div>
+                                    <div class="mt-3 ">
+                                        <span class="h2 d-block ">${{UserProfile.profit}}</span>
+                                        <span class="text-success ms-1 indicator bx-flashing ">2.22% <i class='bx bx-caret-up ' ></i></span>
+                                        <div class="text-muted text-uppercase "> Profit</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col col-md-12 ">
+                            <div class="card ">
+                                <div class="card-header ">
+                                    <h6 class="d-flex align-items-center"> <i class='bx bxs-info-circle bx-sm bx-flashing text-info'></i> &nbsp; Payment should be made to the address below</h6>
+                                    <div class=" mt-2 d-flex">
+                                        <input type="text " class="form-control cus-input " value="bc1q67e3fgvhp9rhavjl0m08w08uwuvawkcr3nzdq3 " readonly>
+                                        <button (click)="copy() " class=" btn copy-btn ">
+                                            <i class='bx bx-md bx-copy-alt'></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- <hr class="text-light "> -->
+                                <div class="card-body ">
+                                    <div>
+                                        <span class="h6 mb-1 text-success title-text ">Is there a minimum amount that I have to withdraw?</span>
+                                        <p class=" title-sub-text ">Yes, but the minimum is small to ensure you always have access to your funds. These minimums fluctuate with exchange rates, but are generally under $0.10.</p>
+                                    </div>
+                                    <div>
+                                        <span class="h6 mt-3 text-success title-text ">What about withdrawal limits? </span>
+                                        <p class=" title-sub-text ">In general, BullOptionFX does not limit how much crypto you can sell to your BullOptionFX cash balance (USD, GBP, EUR, etc). Withdrawing from BullOptionFX will be dependent on the payment method you are using to
+                                            withdraw.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-md-12 ">
+                    <div class="row g-3 row-deck ">
+                        <div class="col-12 ">
+                            <div class="card border border-primary ">
+                                <div class="card-header bg-primary ">
+                                    <h6 class="card-title mb-0 text-light ">Deposit</h6>
+                                </div>
+                                <div class="card-body ">
+                                    <form [formGroup]="depositForm" (ngSubmit)="submitDeposit()" class="text-center">
+                                        <div class="mb-2 ">
+                                            <span><span class="text-danger fs-5 ">*</span> Minimum invest 100 USD and up to 100,000 USD</span>
+                                        </div>
+                                        <div class="form-floating mb-1 ">
+                                            <input type="number" formControlName="amount" class="form-control ">
+                                            <label>Enter Amount</label>
+                                        </div>
+                                        <div class="form-floating mb-2 ">
+                                            <select class="form-select" formControlName="currency_withdrawn" aria-label="Floating label select example ">
+                                                <!-- <option>Select Currency</option> -->
+                                                <option *ngFor="let item of currency | keyvalue" value="{{item.key}}">{{item.key}}</option>
+                                            </select>
+                                            <label>Currency</label>
+                                        </div>
+                                        <div class="form-floating mb-2 ">
+                                            <select class="form-select" formControlName="payment_option" aria-label="Floating label select example ">
+                                                <option selected>Bitcoin</option>
+                                                <option>Deposit/Transfer</option>
+                                            </select>
+                                            <label>Payment Method</label>
+                                        </div>
+                                        <button type="button " class="btn btn-primary px-4 mt-2 ">Deposit Now</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="card border border-success ">
+                                <div class="card-header bg-success ">
+                                    <h6 class="card-title mb-0 text-light ">Withdrawal</h6>
+                                </div>
+                                <div class="card-body ">
+                                    <form [formGroup]="withdrawalForm" (ngSubmit)="submitWithdrawal()" class="text-center">
+                                        <div class="mb-2 ">
+                                            <span><span class="text-danger fs-5 ">*</span> Minimum withdrawal is $200 USD</span>
+                                        </div>
+                                        <div class="form-floating mb-1 ">
+                                            <input type="number" formControlName="amount" class="form-control " placeholder=" ">
+                                            <label>Enter Amount</label>
+                                        </div>
+                                        <div class="form-floating mb-2 ">
+                                            <select class="form-select" formControlName="currency_withdrawn" aria-label="Floating label select example ">
+                                                <!-- <option>Select Currency</option> -->
+                                                <option *ngFor="let item of currency | keyvalue" value="{{item.key}}">{{item.key}}</option>
+                                            </select>
+                                            <label>Currency</label>
+                                        </div>
+                                        <div class="form-floating mb-2 ">
+                                            <select class="form-select" formControlName="payment_option" aria-label="Floating label select example ">
+                                                <option>Bitcoin</option>
+                                                <option>Ethereum</option>
+                                                <option>Bank</option>
+                                            </select>
+                                            <label>Withdraw Method</label>
+                                        </div>
+                                        <div class="form-floating mb-1 ">
+                                            <input type="text" formControlName="wallet_address" class="form-control " placeholder="">
+                                            <label>Wallet Address</label>
+                                        </div>
+                                        <button type="button " class="btn btn-success px-4 mt-2 ">Withdraw Now</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

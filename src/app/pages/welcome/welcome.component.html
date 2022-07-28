@@ -1,0 +1,659 @@
+<div class="nk-body body-wider theme-dark mode-onepage">
+    <div class="nk-wrap">
+        <header class="nk-header page-header is-transparent is-sticky is-shrink is-dark has-fixed" id="header" (scroll)="onScroll($event)" [ngClass]="scroll? 'has-fixed' : '' ">
+            <!-- Header @s  -->
+            <div class="header-main">
+                <div class="header-container container">
+                    <div class="header-wrap">
+                        <!-- Logo @s  -->
+                        <div class="header-logo logo animated" data-animate="fadeInDown" data-delay=".65">
+                            <a href="/" class="logo-link">
+                                <img class="logo-dark" src="https://bull-option.com/images/bull-logo1.png" srcset="https://bull-option.com/images/bull-logo1.png" alt="logo">
+                                <img class="logo-light" src="https://bull-option.com/images/bull-logo1.png" srcset="https://bull-option.com/images/bull-logo1.png" alt="logo">
+                            </a>
+                        </div>
+                        <!-- Menu Toogle @s  -->
+                        <div class="header-nav-toggle">
+                            <button href="#" class="navbar-toggle toggle-btn" [ngClass]="sidebar? 'navbar-active' : '' " (click)="sidebar=!sidebar">
+                                <div class="toggle-line">
+                                    <span></span>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Menu @s  -->
+
+
+                        <!-- sidebar -->
+                        <div class="header-navbar header-navbar-s1 menu-mobile " [ngClass]="sidebar? 'menu-shown' : '' ">
+                            <nav class="header-menu" id="header-menu">
+                                <ul class="menu animated remove-animation" data-animate="fadeInDown" data-delay=".75">
+                                    <li class="menu-item"><a class="menu-link nav-link" href="index#about">About</a></li>
+                                    <li class="menu-item"><a class="menu-link nav-link" href="index#why">Why</a></li>
+                                    <li class="menu-item"><a class="menu-link nav-link" href="index#benifits">Benifits</a></li>
+
+
+
+                                    <li class="menu-item"><a class="menu-link nav-link" href="index#faqs">Faqs</a></li>
+                                    <li class="menu-item"><a class="menu-link nav-link" href="index#contact">Contact</a></li>
+                                </ul>
+                                <ul class="menu-btns menu-btns-s2 align-items-center animated remove-animation" data-animate="fadeInDown" data-delay=".85">
+
+                                    <li><a href="/login" class="btn btn-md btn-grad btn-grad-alt no-change"><span>Login</span></a></li>
+                                </ul>
+                            </nav>
+                            <div class="header-navbar-overlay"></div>
+                        </div>
+                        <!-- .header-navbar @e  -->
+                    </div>
+                </div>
+            </div>
+            <!-- .header-main @e  -->
+            <!-- Banner @s  -->
+            <div class="header-banner bg-theme-grad-s2 header-banner-lungwort ov-h tc-light">
+                <div class="background-shape bs-right"></div>
+                <div class="nk-banner">
+                    <div class="banner banner-fs banner-s2">
+                        <div class="banner-wrap">
+                            <div class="container">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-xl-6 col-lg-5 order-lg-last">
+                                        <div class="banner-gfx banner-gfx-re-s2 animated" data-animate="fadeInUp" data-delay="1.25">
+                                            <img src="https://bull-option.com/images/landing/lungwort/gfx-b.png" alt="header">
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                    <div class="col-xl-6 col-lg-7 text-center text-lg-left">
+                                        <div class="banner-caption cpn tc-light">
+                                            <div class="cpn-head">
+                                                <h1 class="title title-xl-2 fw-6 animated" data-animate="fadeInUp" data-delay="1.35">World #1 Brokerage Agency</h1>
+                                            </div>
+                                            <div class="cpn-text">
+                                                <p class="lead animated" data-animate="fadeInUp" data-delay="1.45">Your access to the global financial markets
+                                                    <br> Invest in hundreds of US stocks commission free
+                                                </p>
+                                            </div>
+                                            <div class="token-status token-status-s2 animated" data-animate="fadeInUp" data-delay="1.65">
+                                                <div class="token-box token-box-s2 round">
+                                                    <h5 class="title title-xs-alt fw-6">20% bonus on first deposit</h5>
+                                                    <div class="countdown-s3 countdown-s4 countdown" data-date="2023/04/22"></div>
+                                                </div>
+                                                <div class="token-action token-action-s1">
+                                                    <a class="btn btn-md btn-grad" href="/login">Sign UP now!!!</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                </div>
+                                <!-- .row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .nk-banner -->
+                <!-- Place Particle Js -->
+                <div id="particles-bg" class="particles-container particles-bg" data-pt-base="#00c0fa" data-pt-base-op=".3" data-pt-line="#2b56f5" data-pt-line-op=".5" data-pt-shape="#00c0fa" data-pt-shape-op=".2"></div>
+            </div>
+            <!-- .header-banner @e  -->
+        </header>
+        <main class="nk-pages">
+            <section class="section section-r bg-theme tc-light pb-0 ov-h">
+                <div class="container">
+                    <div class="section-head section-head-sm wide-auto-sm text-center">
+                        <h2 class="title title-xs title-xs-s1 tc-lighter animated" data-animate="fadeInUp" data-delay=".1">Our Rating</h2>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="nk-block">
+                                <div class="row gutter-vr-30px text-center">
+                                    <div class="col-md col-4">
+                                        <div class="rating animated" data-animate="fadeInUp" data-delay=".2">
+                                            <div class="rating-info">4.7<span>5</span></div>
+                                            <div class="rating-title">ICO Bench</div>
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                    <div class="col-md col-4">
+                                        <div class="rating animated" data-animate="fadeInUp" data-delay=".3">
+                                            <div class="rating-info">A</div>
+                                            <div class="rating-title">ICObazaar</div>
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                    <div class="col-md col-4">
+                                        <div class="rating animated" data-animate="fadeInUp" data-delay=".4">
+                                            <div class="rating-info">9.4<span>10</span></div>
+                                            <div class="rating-title">ICORanker</div>
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                    <div class="col-md col-4">
+                                        <div class="rating animated" data-animate="fadeInUp" data-delay=".5">
+                                            <div class="rating-info">4.9<span>5</span></div>
+                                            <div class="rating-title">Trackico</div>
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                    <div class="col-md col-4">
+                                        <div class="rating animated" data-animate="fadeInUp" data-delay=".6">
+                                            <div class="rating-info">5<span>5</span></div>
+                                            <div class="rating-title">WiserICO</div>
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                    <div class="col-md col-4">
+                                        <div class="rating animated" data-animate="fadeInUp" data-delay=".7">
+                                            <div class="rating-info">9.1<span>10</span></div>
+                                            <div class="rating-title">Fundico</div>
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .col -->
+                    </div>
+                    <!-- .row -->
+                </div>
+            </section>
+            <!-- // -->
+            <section class="section bg-theme tc-light" id="about">
+                <div class="container">
+                    <!-- Block @s  -->
+                    <div class="nk-block nk-block-features-s2">
+                        <div class="row align-items-center gutter-vr-30px">
+                            <div class="col-md-6">
+                                <div class="gfx animated" data-animate="fadeInUp" data-delay=".1">
+                                    <img src="https://www.raceoption.com/assets/css/img/main/platform-1.png" alt="gfx">
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-md-6">
+                                <!-- Section Head @s  -->
+                                <div class="nk-block-text ">
+                                    <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".2">Choose trader to copy trades</h6>
+                                    <p class="lead animated mb-3" data-animate="fadeInUp" data-delay=".4">Select one or several traders from our most successful traders.</p>
+                                </div>
+                                <div class="nk-block-text 2">
+                                    <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".2">
+                                        Monitor your earnings</h6>
+                                    <p class="lead animated mb-3" data-animate="fadeInUp" data-delay=".4">You don't need to trade manually, just follow your balance growing!</p>
+                                </div>
+                                <div class="nk-block-text ">
+                                    <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".2">Withdraw your profit</h6>
+                                    <p class="lead animated mb-3" data-animate="fadeInUp" data-delay=".4">Request your withdrawal and get paid on your cryptocurrency wallet anytime.</p>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div>
+                                <p>CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 69% of retail investor accounts lose money when trading CFDs with this provider. You should consider whether you understand
+                                    how CFDs, FX or any of our other products work and whether you can afford to take the high risk of losing your money.</p>
+                            </div>
+                        </div>
+                        <!-- .row -->
+                    </div>
+                    <!-- .block @e  -->
+                </div>
+            </section>
+            <!-- // -->
+            <section class="section bg-theme-alt tc-light">
+                <div class="container">
+                    <!-- Block @s  -->
+                    <div class="nk-block nk-block-features-s2">
+                        <div class="row align-items-center flex-row-reverse gutter-vr-30px">
+                            <div class="col-md-6">
+                                <div class="gfx animated" data-animate="fadeInUp" data-delay=".1">
+                                    <img src="https://www.interactivebrokers.co.uk/images/web/spot-currencies-imac.png" alt="gfx">
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-md-6">
+                                <!-- Section Head @s  -->
+                                <div class="nk-block-text">
+                                    <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".2">Professional FX Trading Tools</h6>
+                                    <h2 class="title title-semibold animated fw-bold" data-animate="fadeInUp" data-delay=".3">FXTrader</h2>
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".4">The FXTrader provides an optimized trading interface with tools built for the currency markets, including real-time streaming quotes, up and down indicators, trading volumes, pending trades, executions, positions, and
+                                        average price plus P&L.</p>
+                                    <div class="animated" data-animate="fadeInUp" data-delay=".5">
+                                        <p class="fw-bold">Manage FX Risk on Foreign Stocks
+                                            <br> Trade stocks on overseas exchanges and attach an FX order to the equity trade to hedge the currency you want at the time of trade.</p>
+                                    </div>
+                                    <div class="animated" data-animate="fadeInUp" data-delay=".6">
+                                        <p class="fw-bold">Large-Size Order Facility
+                                            <br> Large-Sized Order quotes are specific to the order quantity entered are generated based upon an aggregation of quotes provided by interbank dealers to help get the best execution possible and minimize market
+                                            impact.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                        </div>
+                        <!-- .row -->
+                    </div>
+                    <!-- .block @e  -->
+                    <!-- Block @s  -->
+                    <div class="nk-block nk-block-features-s2">
+                        <div class="row align-items-center gutter-vr-30px">
+                            <div class="col-md-6">
+                                <div class="gfx animated" data-animate="fadeInUp" data-delay=".1">
+                                    <img src="https://xas.scdn5.secure.raxcdn.com/build/twigImages/blocks/platforms/desktop.d3d5bc7b.png" alt="gfx">
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-md-6">
+                                <!-- Section Head @s  -->
+                                <div class="nk-block-text">
+                                    <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".2">Choose our world-class platform</h6>
+
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".4">Easy to use, fully customisable</p>
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".5">Superior execution speeds</p>
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".5">Trader's calculator, performance statistics, sentiment</p>
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".5">Charts trading, market order depth</p>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                        </div>
+                        <!-- .row -->
+                    </div>
+                    <!-- .block @e  -->
+                    <!-- Block @s  -->
+                </div>
+            </section>
+            <!-- // -->
+            <section class="section bg-theme-dark-alt tc-light" id="why">
+                <div class="background-shape bs-reverse"></div>
+                <div class="container">
+                    <div class="section-head section-head-s9 wide-sm">
+                        <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".1">Why trade Forex with BullOption FX</h6>
+
+                        <p class="animated" data-animate="fadeInUp" data-delay=".3">The ICO Crypto Team combines a passion for esports, industry experise &amp; proven record in finance, development, marketing.</p>
+                    </div>
+                    <!-- Block @s  -->
+                    <div class="nk-block">
+                        <div class="row gutter-vr-30px justify-content-center">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="feature feature-s8 feature-center card card-full card-md bg-theme-alt animated" data-animate="fadeInUp" data-delay=".4">
+                                    <div class="feature-icon feature-icon-lg my-0">
+                                        <img src="https://bull-option.com/images/landing/icons/icon-a-dark.png" alt="feature">
+                                    </div>
+                                    <div class="feature-text feature-text-s8">
+                                        <h4 class="title title-sm title-thin title-s5"><span>Ultra-competitive FX spreads </span></h4>
+                                        <p>Trade major Forex pairs from 0.6 pips. Competitive entry prices and even lower rates for active traders.</p>
+                                        <a href="/login" class="link link-primary link-feature-s1"><i class='bx bx-right-arrow-alt bx-md link-icon icon-circle icon-circle-md'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-4 col-md-4">
+                                <div class="feature feature-s8 feature-center card card-full card-md bg-theme-alt animated" data-animate="fadeInUp" data-delay=".5">
+                                    <div class="feature-icon feature-icon-lg my-0">
+                                        <img src="https://bull-option.com/images/landing/icons/icon-b-dark.png" alt="feature">
+                                    </div>
+                                    <div class="feature-text feature-text-s8">
+                                        <h4 class="title title-sm title-thin title-s5"><span>Best-in-class execution</span></h4>
+                                        <p>Tier-1 liquidity gives higher fill-rates, fewer premature stop-outs and significant price improvements.</p>
+                                        <a href="/login" class="link link-primary link-feature-s1"><i class='bx bx-right-arrow-alt bx-md link-icon icon-circle icon-circle-md'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-4 col-md-4">
+                                <div class="feature feature-s8 feature-center card card-full card-md bg-theme-alt animated" data-animate="fadeInUp" data-delay=".6">
+                                    <div class="feature-icon feature-icon-lg my-0">
+                                        <img src="https://bull-option.com/images/landing/icons/icon-c-dark.png" alt="feature">
+                                    </div>
+                                    <div class="feature-text feature-text-s8">
+                                        <h4 class="title title-sm title-thin title-s5"><span>Award-winning platform &amp; Low Cost </span>Instant Private Transaction</h4>
+                                        <p>Benefit from integrated Trade Signals, news feeds and innovative risk-management features.</p>
+                                        <a href="/logi/login" class="link link-primary link-feature-s1"><i class='bx bx-right-arrow-alt bx-md link-icon icon-circle icon-circle-md'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                        </div>
+                        <!-- .row -->
+                        <div class="d-flex justify-content-center pdt-r">
+                            <ul class="btn-grp animated" data-animate="fadeInUp" data-delay=".7">
+                                <li><a href="/login" class="btn btn-md btn-grad">Open an account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- .block @e  -->
+                </div>
+            </section>
+            <!-- // -->
+            <section class="section bg-theme-alt tc-light" id="benifits">
+                <div class="container">
+                    <div class="section-head section-head-s9 wide-sm">
+                        <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".1">Low Commissions</h6>
+                        <h2 class="title title-semibold animated" data-animate="fadeInUp" data-delay=".2">With No Hidden Spreads or Markupss</h2>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".3">0.08 to 0.20 bps times the trade size, with no hidden spreads or markups. Just the combination of tight spreads, as narrow as 1/10 pip, real time prices from 17 of the world's largest FX dealing banks and a transparent, low commission
+                            that avoids the conflict of interest of other brokers which deal for their own account.</p>
+                    </div>
+                    <!-- Block @s  -->
+                    <div class="nk-block nk-block-features">
+                        <div class="row gutter-100px gutter-vr-60px">
+                            <div class="col-lg-6">
+                                <div class="feature-text feature-text-s2">
+                                    <h5>Open your account </h5>
+                                    <h5>Applying for an account is quick and easy with our secure online form, and you could be trading within minutes. </h5>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-6">
+                                <div class="feature feature-s12 animated" data-animate="fadeInUp" data-delay=".5">
+                                    <img src="https://xas.scdn5.secure.raxcdn.com/build/twigImages/blocksNew/openAccount/iPhone_black.bfddf8b8.png" alt="feature">
+                                </div>
+                            </div>
+                            <!-- .col -->
+                        </div>
+                        <!-- .row -->
+                    </div>
+                    <!-- .block @s  -->
+                </div>
+            </section>
+            <!-- // -->
+            <!-- // -->
+
+            <!-- // -->
+            <section class="section bg-theme-alt tc-light">
+                <div class="container">
+                    <div class="section-head section-head-s9 wide-md">
+                        <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".1">Partners</h6>
+                        <h2 class="title title-semibold animated" data-animate="fadeInUp" data-delay=".2">Supported By</h2>
+                    </div>
+                    <!-- Block @s  -->
+                    <div class="nk-block block-partners mgb-m30">
+                        <ul class="partner-list partner-list-left partner-list-s3 flex-wrap">
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".3">
+                                <img src="https://bull-option.com/images/landing/partners/a-xs-light-alt.png" alt="partner">
+                            </li>
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".35">
+                                <img src="https://bull-option.com/images/landing/partners/b-xs-light-alt.png" alt="partner">
+                            </li>
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".4">
+                                <img src="https://bull-option.com/images/landing/partners/c-xs-light-alt.png" alt="partner">
+                            </li>
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".45">
+                                <img src="https://bull-option.com/images/landing/partners/d-xs-light-alt.png" alt="partner">
+                            </li>
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".5">
+                                <img src="https://bull-option.com/images/landing/partners/e-xs-light-alt.png" alt="partner">
+                            </li>
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".55">
+                                <img src="https://bull-option.com/images/landing/partners/a-xs-light-alt.png" alt="partner">
+                            </li>
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".6">
+                                <img src="https://bull-option.com/images/landing/partners/a-sm-light-alt.png" alt="partner">
+                            </li>
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".65">
+                                <img src="https://bull-option.com/images/landing/partners/b-sm-light-alt.png" alt="partner">
+                            </li>
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".7">
+                                <img src="https://bull-option.com/images/landing/partners/c-sm-light-alt.png" alt="partner">
+                            </li>
+                            <li class="partner-logo partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".75">
+                                <img src="https://bull-option.com/images/landing/partners/a-sm-light-alt.png" alt="partner">
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Block @e  -->
+                </div>
+            </section>
+            <!-- // -->
+            <section class="section bg-theme tc-light" id="faqs">
+                <div class="container">
+                    <div class="section-head section-head-s9 wide-md">
+                        <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".1">FAQ</h6>
+                        <h2 class="title title-semibold animated" data-animate="fadeInUp" data-delay=".2">Frequently asked questions</h2>
+                    </div>
+                    <!-- Block @s  -->
+                    <div class="nk-block">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-12">
+                                <ul class="nav tab-nav tab-nav-btn pdb-r justify-content-start animated" data-animate="fadeInUp" data-delay=".4">
+                                    <li><a class="active" data-toggle="tab" href="#general-questions-13">General</a></li>
+                                    <li><a data-toggle="tab" href="#ico-questions-13">Deposit</a></li>
+                                    <li><a data-toggle="tab" href="#tokens-sales-13">Withdrawals</a></li>
+                                </ul>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-8">
+                                <div class="tab-content animated" data-animate="fadeInUp" data-delay=".5">
+                                    <div class="tab-pane fade show active" id="general-questions-13">
+                                        <div class="accordion accordion-faq" id="faq-47">
+                                            <div class="accordion-item accordion-item-s2 bg-theme-alt">
+                                                <h5 class="accordion-title accordion-title-sm" data-toggle="collapse" data-target="#faq-47-1"> How do i sign up? <span class="accordion-icon"><i class='bx bx-chevron-up bx-md'></i></span>
+                                                </h5>
+                                                <div id="faq-47-1" class="collapse show" data-parent="#faq-47">
+                                                    <div class="accordion-content">
+                                                        <ol>
+                                                            <li class="mb-3">
+                                                                Submit the signup form to open your first account. Fill in all the required information and click "Open account".
+                                                            </li>
+                                                            <li class="mb-3">
+                                                                Select Make a deposit into account
+                                                            </li>
+                                                            <li class="mb-3">
+                                                                Your trading account has been opened successfully! Select one of the deposit options to make a deposit, or click Or verify my identity to verify your Personal Area.
+                                                            </li>
+                                                            <li class="mb-3">
+                                                                Please note: Make sure your credentials match your documents as you'll be asked to confirm your personal data during verification. Please also bear in mind that since you can only use your own bank account, credit/debit card or e-currency wallet, your
+                                                                personal info should match the account or cardholder name as well.
+                                                            </li>
+                                                        </ol>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item accordion-item-s2 bg-theme-alt">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-47-2"> I've opened an account. What do I do next?<span class="accordion-icon"><i class='bx bx-chevron-up bx-md'></i></span>
+                                                </h5>
+                                                <div id="faq-47-2" class="collapse" data-parent="#faq-47">
+                                                    <div class="accordion-content">
+                                                        <p> After opening an account, Make a deposit into your account to start trading </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item accordion-item-s2 bg-theme-alt">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-47-3">How can I deposit to my account? <span class="accordion-icon"><i class='bx bx-chevron-up bx-md'></i></span>
+                                                </h5>
+                                                <div id="faq-47-3" class="collapse" data-parent="#faq-47">
+                                                    <div class="accordion-content">
+                                                        <p>To make a deposit, please log in to your Personal Area, switch to the account you would like to deposit at the top of the page and select the payment system you would like to use under the Deposit
+                                                            my account section on the right. Then enter the amount you want to deposit and click "Continue". Fill in other information if required and click "Confirm"</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item accordion-item-s2 bg-theme-alt">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-47-4"> When will the deposited funds be credited to my balance? <span class="accordion-icon"><i class='bx bx-chevron-up bx-md'></i></span>
+                                                </h5>
+                                                <div id="faq-47-4" class="collapse" data-parent="#faq-47">
+                                                    <div class="accordion-content">
+                                                        <p>Bank-wire transfers: All requests are processed within 1-3 hours during business hours of our Financial Department. Skrill/Neteller/FasaPay/Bank Card/Bitcoin deposits: instant.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="ico-questions-13">
+                                        <div class="accordion accordion-faq" id="faq-48">
+                                            <div class="accordion-item accordion-item-s2 bg-theme-alt">
+                                                <h5 class="accordion-title accordion-title-sm" data-toggle="collapse" data-target="#faq-48-1"> Trading conditions <span class="accordion-icon"><i class='bx bx-chevron-up bx-md'></i></span>
+                                                </h5>
+                                                <div id="faq-48-1" class="collapse show" data-parent="#faq-48">
+                                                    <div class="accordion-content">
+                                                        <p>You can review our trading conditions for Forex here.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item accordion-item-s2 bg-theme-alt">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-48-2"> Are my funds safe? Do you offer segregated accounts? <span class="accordion-icon"><i class='bx bx-chevron-up bx-md'></i></span>
+                                                </h5>
+                                                <div id="faq-48-2" class="collapse" data-parent="#faq-48">
+                                                    <div class="accordion-content">
+                                                        <p>In accordance with international regulation standards, BitFXOption uses separate accounts to keep customers' funds segregated from the company's balance sheets. This keeps your funds secure and untouched.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-4">
+                                <div class="nk-block-img mt-4 mt-lg-0 animated" data-animate="fadeInUp" data-delay=".6">
+                                    <img src="https://bull-option.com/images/landing/gfx/gfx-p.png" alt="lungwort">
+                                </div>
+                            </div>
+                            <!-- .col -->
+                        </div>
+                        <!-- .row -->
+                    </div>
+                    <!-- .block @e  -->
+                </div>
+            </section>
+            <!-- // -->
+            <section class="section section-contact bg-theme-alt tc-light ov-h" id="contact">
+                <div class="container">
+                    <!-- Block @s  -->
+                    <div class="nk-block block-contact">
+                        <div class="row justify-content-center gutter-vr-30px">
+                            <div class="col-lg-3">
+                                <div class="section-head section-head-sm section-head-s9 tc-light text-center text-lg-left">
+                                    <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".1">Contact</h6>
+                                    <h2 class="title animated" data-animate="fadeInUp" data-delay=".2">Get In Touch</h2>
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".3">Any question? Reach out to us and we’ll get back to you shortly.</p>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between h-100">
+                                    <ul class="contact-list contact-list-s2">
+                                        <li class="animated" data-animate="fadeInUp" data-delay=".4">
+                                            <i class='bx bxs-phone bx-sm contact-icon'></i>
+                                            <div class="contact-text">
+                                                <span>+19289004045</span>
+                                            </div>
+                                        </li>
+                                        <li class="animated" data-animate="fadeInUp" data-delay=".5">
+                                            <i class='bx bx-envelope bx-sm contact-icon'></i>
+                                            <div class="contact-text">
+                                                <span>info@bull-option.com</span>
+                                            </div>
+                                        </li>
+                                        <li class="animated" data-animate="fadeInUp" data-delay=".6">
+                                            <i class='bx bxl-telegram bx-sm contact-icon'></i>
+                                            <div class="contact-text">
+                                                <span>Join us on Telegram</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-4 offset-lg-1">
+                                <div class="gap-6x d-none d-lg-block"></div>
+                                <div class="gap-4x d-none d-lg-block"></div>
+                                <form id="contact-form-01" class="contact-form nk-form-submit" action="form/contact.php" method="post">
+                                    <div class="field-item field-item-s2 animated" data-animate="fadeInUp" data-delay=".7">
+                                        <input name="contact-name" type="text" class="input-bordered required" placeholder="Your Name">
+                                    </div>
+                                    <div class="field-item field-item-s2 animated" data-animate="fadeInUp" data-delay=".8">
+                                        <input name="contact-email" type="email" class="input-bordered required email" placeholder="Your Email">
+                                    </div>
+                                    <div class="field-item field-item-s2 animated" data-animate="fadeInUp" data-delay=".9">
+                                        <textarea name="contact-message" class="input-bordered input-textarea required" placeholder="Your Message"></textarea>
+                                    </div>
+                                    <input type="text" class="d-none" name="form-anti-honeypot" value="">
+                                    <div class="row">
+                                        <div class="col-sm-12 animated" data-animate="fadeInUp" data-delay="1">
+                                            <button type="submit" class="btn btn-s2 btn-md btn-grad">Submit</button>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-results"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-4 align-self-center">
+                                <div class="nk-block-img animated" data-animate="fadeInUp" data-delay="1.1">
+                                    <img src="https://bull-option.com/images/landing/gfx/gfx-q.png" alt="lungwort">
+                                </div>
+                            </div>
+                            <!-- .col -->
+                        </div>
+                        <!-- .row -->
+                    </div>
+                    <!-- .block @e  -->
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="nk-footer bg-theme-dark">
+            <div class="tc-light">
+                <div class="container">
+                    <!-- Block @s  -->
+                    <div class="nk-block">
+                        <div class="bg-theme-accent-alt round subscribe-wrap animated" data-animate="fadeInUp" data-delay=".1">
+                            <div class="row text-center text-md-left justify-content-center align-items-center gutter-vr-25px">
+                                <div class="col-lg-6">
+                                    <div class="wide-auto-sm">
+                                        <h4 class="title-sm">Don't miss out, Stay updated</h4>
+                                        <p>Sign up for updates and market news. Subscribe to our newsletter and receive updates and tips</p>
+                                    </div>
+                                </div>
+                                <!-- .col -->
+                                <div class="col-lg-6 mt-2">
+                                    <div class="gap-3x d-none d-lg-block"></div>
+                                    <form action="form/subscribe.php" class="nk-form-submit" method="post">
+                                        <div class="field-inline field-inline-s2 field-inline-s2-sm bg-white shadow-soft">
+                                            <div class="field-wrap">
+                                                <input class="input-solid input-solid-md required email" type="text" name="contact-email" placeholder="Enter your email">
+                                                <input type="text" class="d-none" name="form-anti-honeypot" value="">
+                                            </div>
+                                            <div class="submit-wrap">
+                                                <button class="btn btn-md btn-grad">Subscribe</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-results"></div>
+                                    </form>
+                                </div>
+                                <!-- .col -->
+                            </div>
+                            <!-- .row -->
+                        </div>
+                    </div>
+                    <!-- .block @e  -->
+                </div>
+                <!-- .nk-ovm -->
+            </div>
+            <div class="section section-footer section-m tc-light bg-transparent ov-h">
+                <div class="container">
+                    <!-- Block @s  -->
+                    <div class="nk-block block-footer">
+                        <div class="row">
+                            <div class="col">
+                                <div class="wgs wgs-text text-center mb-3">
+                                    <a href="./" class="footer-logo mt-n5">
+                                        <img style="width: 10em;" src="https://bull-option.com/images/bull-logo2.png" srcset="https://bull-option.com/images/bull-logo2.png" alt="logo">
+                                    </a>
+                                    <div class="copyright-text copyright-text-s3 pdt-m">
+                                        <p><span class="d-sm-block">Copyright &copy; {{year}}, Bull-Options FX. </span>All trademarks and copyrights belong to Bull-Options FX.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                        </div>
+                        <!-- .row -->
+                    </div>
+                    <!-- .block @e  -->
+                </div>
+                <div class="nk-ovm shape-s"></div>
+            </div>
+        </footer>
+
+        <!-- Preloader -->
+        <!-- <div class="preloader"><span class="spinner spinner-round"></span></div> -->
+    </div>

@@ -1,0 +1,157 @@
+/*# sourceMappingURL=custom.min.css.map */
+
+.auth-page-wrapper {
+    background: url('../images/02/golden-coin-with-ethereum-dollar-sign-balance-scalebusiness-finance-currency-exchange-conceptcryptocurrencyblockchain-technologyminimal-style3d-rendering-1.png');
+}
+
+.auth-page-wrapper .auth-page-content {
+    padding-bottom: 60px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.auth-page-wrapper .footer {
+    left: 0;
+    background-color: transparent;
+    color: #212529;
+}
+
+.auth-one-bg-position {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 380px;
+}
+
+@media (max-width: 575.98px) {
+    .auth-one-bg-position {
+        height: 280px;
+    }
+}
+
+.auth-one-bg {
+    background-image: url(../images/auth-one-bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.auth-one-bg .bg-overlay {
+    background: -webkit-gradient( linear, left top, right top, from(#364574), to(#405189));
+    background: linear-gradient(to right, #364574, #405189);
+    opacity: 0.9;
+}
+
+.auth-one-bg .shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.auth-one-bg .shape>svg {
+    width: 100%;
+    height: auto;
+    fill: var(--vz-body-bg);
+}
+
+.auth-pass-inputgroup input[type="text"]+.btn .ri-eye-fill:before {
+    content: "\ecb6";
+}
+
+.bull-logo {
+    transform: scale(7.5);
+    position: absolute;
+    top: 51px;
+    left: 89%;
+}
+
+.login-logo {
+    display: flex;
+    position: relative;
+    top: 13em;
+    bottom: 0;
+    left: 10em;
+    transform: scale(17.5);
+}
+
+.rounded-btn {
+    border-radius: 30px;
+}
+
+.link-text {
+    color: #dbb76a;
+}
+
+@media only screen and (max-width: 768px) {
+    .login-logo {
+        position: absolute;
+        top: 1.1em;
+        left: 50%;
+        transform: scale(6.5);
+    }
+    .bull-logo {
+        position: absolute;
+        top: 45px;
+        left: 85%;
+        transform: scale(7.5);
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .login-logo {
+        position: absolute;
+        top: 1.1em;
+        left: 50%;
+        transform: scale(6.5);
+    }
+    .carousel-under {
+        display: none;
+    }
+    .bull-logo {
+        position: absolute;
+        top: 70px;
+        left: 75%;
+        transform: scale(6.5);
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .login-logo {
+        position: absolute;
+        top: 1.1em;
+        left: 50%;
+        transform: scale(6.5);
+    }
+    .carousel-under {
+        display: none;
+    }
+    .bull-logo {
+        position: absolute;
+        top: 75px;
+        left: 79%;
+        transform: scale(5.5);
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .login-logo {
+        position: absolute;
+        top: 1.1em;
+        left: 50%;
+        transform: scale(6.5);
+    }
+    .carousel-under {
+        display: none;
+    }
+    .bull-logo {
+        position: absolute;
+        top: 75px;
+        left: 50%;
+        transform: scale(4.5);
+    }
+}

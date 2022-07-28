@@ -1,0 +1,30 @@
+.badge {
+    font-weight: 400 !important;
+    font-size: 15px !important;
+    border-radius: 15px !important;
+}
+
+.badge-danger {
+    background-color: #dc3545 !important;
+}
+
+.badge-success {
+    background-color: #00c894 !important;
+}
+
+.shield-danger {
+    color: #dc3545 !important;
+}
+
+.shield-success {
+    color: #00c894 !important;
+}
+
+h5,
+h6 {
+    font-size: 1em !important;
+}
+
+h6 {
+    font-weight: 500 !important;
+}

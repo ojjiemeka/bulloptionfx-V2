@@ -1,0 +1,217 @@
+<app-header></app-header>
+
+<div class="wrapper">
+
+    <div class="page-toolbar px-xl-4 px-sm-2 px-0 py-3">
+        <div class="container-fluid">
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col">
+                    <ol class="breadcrumb bg-transparent mb-0">
+                        <li class="breadcrumb-item"><a class="text-secondary" href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-secondary" href="/profile">Account</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Settings</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, Chris!</h1>
+                    <!-- <small class="text-muted">You have 12 new messages and 7 new notifications.</small> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-body px-xl-4 px-sm-2 px-0 py-lg-2 py-1 mt-0 mt-lg-3">
+        <div class="container-fluid">
+            <div class="row g-3">
+                <div class="col-xxl-3 col-lg-4 col-md-4">
+                    <div class="list-group list-group-custom sticky-top me-xl-4" style="top: 100px;">
+                        <a class="list-group-item list-group-item-action" href="account-settings"><i class='bx bx-arrow-back'></i> Back</a>
+                        <a class="list-group-item list-group-item-action" href="account-settings#list-item-1">Profile Details</a>
+                        <a class="list-group-item list-group-item-action" href="account-settings#list-item-2">Change Password</a>
+                        <a class="list-group-item list-group-item-action" href="account-settings#list-item-3">Notifications Settings</a>
+                    </div>
+                </div>
+                <div class="col-xxl-8 col-lg-8 col-md-8">
+                    <div id="list-item-1" class="card fieldset border border-muted mt-0">
+
+                        <span class="fieldset-tile text-muted bg-body">Profile Details:</span>
+                        <div class="card">
+                            <div class="card-body">
+                                <form [formGroup]="editForm" (ngSubmit)="editBtn()">
+                                    <div class="row mb-3">
+                                        <label class="col-md-3 col-sm-4 col-form-label">Avatar</label>
+                                        <div class="col-md-9 col-sm-8">
+                                            <div class="image-input avatar xxl rounded-4" style="background-image: url(../assets/img/avatar.png)">
+                                                <div class="avatar-wrapper rounded-4" style="background-image: url(../assets/img/profile_av.png)">
+                                                </div>
+                                                <div class="file-input">
+                                                    <input type="file" class="form-control" name="file-input" id="file-input">
+                                                    <label for="file-input" class="fa fa-pencil shadow text-muted"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label class="col-md-3 col-sm-4 col-form-label">Full Name *</label>
+                                        <div class="col-md-5 col-sm-4">
+                                            <input type="text" formControlName="fname" class="form-control form-control-lg" value="{{UserProfile.fname}}">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4">
+                                            <input type="text" formControlName="lname" class="form-control form-control-lg" value="{{UserProfile.lname}}">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label class="col-md-3 col-sm-4 col-form-label">Email *</label>
+                                        <div class="col-md-9 col-sm-8">
+                                            <input type="email" formControlName="email" class="form-control form-control-lg" value="{{UserProfile.email}}">
+                                        </div>
+                                        <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{UserProfile.email}}"> -->
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label class="col-md-3 col-sm-4 col-form-label">Contact Phone *</label>
+                                        <div class="col-md-9 col-sm-8">
+                                            <input type="text" formControlName="phonenumber" class="form-control form-control-lg" value="{{UserProfile.phonenumber}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer text-center d-flex justify-content-center align-items-center">
+                                        <button class="btn btn-lg btn-outline-light mx-2" (click)="clearBtn()" type="reset">Clear</button>
+                                        <button class="btn btn-lg btn-primary" type="submit">Save Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="list-item-2" class="card fieldset border border-muted mt-5">
+
+                        <span class="fieldset-tile text-muted bg-body">Change Password</span>
+                        <div class="card">
+                            <div class="card-body">
+                                <form [formGroup]="editPasswordForm" (ngSubmit)="changePasswordBtn()">
+                                    <div class="row g-3">
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control disabled-text" value="louispierce" placeholder="Username" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control disabled-text" value="louis.info@yourdomain.com" placeholder="Email" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <h6 class="border-top pt-2 mt-2 mb-3">Change Password</h6>
+                                            <div class="mb-3">
+                                                <input type="password" formControlName="old_password" class="form-control form-control-lg" placeholder="Current Password" [ngClass]="{ 'is-invalid': f['old_password'].errors }">
+                                                <div class="invalid-feedback">
+                                                    <div *ngIf="submitted && f['old_password'].errors?.['required']">Password does not match</div>
+                                                    <div *ngIf=" f['old_password'].touched">Password is required</div>
+                                                    <div *ngIf=" f['old_password'].errors?.['minlength']">
+                                                        Password must be at least 6 characters
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-1">
+                                                <input type="password" formControlName="new_password" class="form-control form-control-lg" placeholder="New Password" [ngClass]="{ 'is-invalid': f['new_password'].errors }">
+                                                <div class="invalid-feedback">
+                                                    <div *ngIf="submitted && f['new_password'].errors?.['required']">Password does not match</div>
+                                                    <div *ngIf=" f['new_password'].touched">Password is required</div>
+                                                    <div *ngIf=" f['new_password'].errors?.['minlength']">
+                                                        Password must be at least 6 characters
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="password" formControlName="password_confirmation" class="form-control form-control-lg" placeholder="Confirm New Password" [ngClass]="{ 'is-invalid': f['password_confirmation'].errors }">
+                                                <div class="invalid-feedback">
+                                                    <div *ngIf="submitted && f['password_confirmation'].errors?.['required']">
+                                                        Password is required
+                                                    </div>
+                                                    <div *ngIf="f['password_confirmation'].errors?.['confirmedValidator'] || f['password'].dirty">
+                                                        Password does not match
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center d-flex justify-content-center align-items-center">
+                                            <button class="btn btn-lg btn-outline-light mx-2" (click)="clearBtn()" type="reset">Discard</button>
+                                            <button class="btn btn-lg btn-primary" type="submit">Save Changes</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="list-item-3" class="card fieldset border border-muted mt-5">
+
+                        <span class="fieldset-tile text-muted bg-body">Notifications Settings</span>
+                        <div class="card">
+                            <div class="card-body table-responsive">
+                                <table class="table card-table mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-muted">Email Notifications</td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="n_email1" checked>
+                                                    <label class="form-check-label" for="n_email1">Email</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="n_phone1">
+                                                    <label class="form-check-label" for="n_phone1">Phone</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Plan Updates</td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="n_email2" checked>
+                                                    <label class="form-check-label" for="n_email2">Email</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="n_phone2">
+                                                    <label class="form-check-label" for="n_phone2">Phone</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Newsletters</td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="n_email5" checked>
+                                                    <label class="form-check-label" for="n_email5">Email</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="n_phone5">
+                                                    <label class="form-check-label" for="n_phone5">Phone</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer text-center d-flex justify-content-center align-items-center">
+                                <button class="btn btn-lg btn-outline-light mx-2" (click)="clearBtn()" type="reset">Discard</button>
+                                <button class="btn btn-lg btn-primary" type="submit">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <app-footer></app-footer> -->
+    <app-footer></app-footer>
+</div>

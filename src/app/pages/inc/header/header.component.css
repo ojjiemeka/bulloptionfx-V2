@@ -1,0 +1,19 @@
+.support-btn {
+    color: #00C894;
+}
+
+.support-btn:hover {
+    opacity: 0.8;
+}
+
+#theme-switch {
+    outline: none;
+    background: none;
+    border: none;
+}
+
+h6 {
+    /* font-variant: diagonal-fractions; */
+    font-size: 15px !important;
+    color: #fff;
+}

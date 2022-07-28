@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<div class="wrapper">
+
+    <div class="page-toolbar px-xl-4 px-sm-2 px-0 py-3">
+        <div class="container-fluid">
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col">
+                    <ol class="breadcrumb bg-transparent mb-0">
+                        <li class="breadcrumb-item"><a class="text-secondary" href="/">Home</a></li>
+                        <!-- <li class="breadcrumb-item"><a class="text-secondary" href="crafted-page.html">Crafted pages</a></li> -->
+                        <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, {{UserProfile.fname}}</h1>
+                    <!-- <small class="text-muted">You have 12 new messages and 7 new notifications.</small> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-body px-xl-4 px-sm-2 px-0 py-lg-2 py-1 mt-0 mt-lg-3">
+        <div class="container-fluid">
+            <div class="row g-2">
+                <div class="col-12">
+                    <table id="myDataTable" class="myDataTable table align-middle table-bordered mb-0 custom-table">
+                        <thead>
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Date</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Coin</th>
+                                <th>Amount</th>
+                                <th>Note</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#AS45453279</td>
+                                <td>2 May 2021</td>
+                                <td>Chris Fox</td>
+                                <td>
+                                    <a href="javascript:void(0);" class="d-flex align-items-center link-secondary">
+                                        <img class="avatar sm rounded-circle" src="../assets/img/xs/avatar1.jpg" alt="">
+                                        <div class="flex-fill ms-3">
+                                            <div class="mb-0 h6">Maryam Amiri</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Bitcoin</td>
+                                <td>$1597.78</td>
+                                <td>None</td>
+                                <td><span class="badge bg-success">COMPLETED</span></td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

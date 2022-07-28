@@ -1,0 +1,176 @@
+<app-header></app-header>
+
+<div class="wrapper">
+
+    <div class="page-toolbar px-xl-4 px-sm-2 px-0 py-3">
+        <div class="container-fluid">
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col">
+                    <ol class="breadcrumb bg-transparent mb-0">
+                        <li class="breadcrumb-item"><a class="text-secondary" href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-secondary" href="/profile">Account</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Investment Plans</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-body px-xl-4 px-sm-2 px-0 py-lg-2 py-1 mt-0 mt-lg-3">
+        <div class="container-fluid">
+            <div class=" g-3">
+                <div class="col-12">
+                    <div class="card overflow-hidden">
+                        <div class="card-body bg-secondary text-light">
+                            <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, {{UserProfile.fname}}</h1>
+
+                        </div>
+                        <div class="card-body">
+                            <h2 class="fw-normal">Current Plan:
+                                <span *ngIf="UserProfile.bot === 0" class="text-danger">Inactive</span>
+                                <span *ngIf="UserProfile.bot !== 0" class="text-success">Active</span>
+                            </h2>
+                            <p *ngIf="UserProfile.bot === 0" class="d-flex align-items-center">
+                                <i class='bx bxs-error-alt bx-sm text-warning'></i> &nbsp; Please purchase an investment plan
+                            </p>
+
+                            <p *ngIf="UserProfile.bot !== 0" class="d-flex align-items-center">
+                                <i class='bx bxs-info-circle text-info'></i> &nbsp; Your plan is active for 30 Days
+                            </p>
+
+                        </div>
+                        <div class="card-footer">
+                            <a title="" class="btn btn-secondary text-uppercase">Upgrade
+                                Plan</a>
+                            <button type="button" class="btn btn-link text-danger">Cancel Plan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card fieldset border border-primary">
+                        <span class="fieldset-tile text-primary bg-body">Recent Invoices:</span>
+                        <div class="owl-carousel owl-theme row d-flex justify-content-around text-center">
+
+                            <div class="item card col-lg-3 col-md-12">
+                                <div class="option-9 position-absolute text-light"><i class="fa fa-star"></i></div>
+                                <div class="card-body">
+                                    <div class="avatar lg rounded-circle no-thumbnail mb-3 fs-5">Silver</div>
+                                    <small class="text-muted">Best plan for user to invest & earn money with X5 Bitcoin Increase.
+                                    </small>
+                                    <h4 class="mt-2">USD 12,500</h4>
+                                    <ul class="lh-lg mb-0 text-muted">
+                                        <li>8% Automated Weekly Payout</li>
+                                        <li>30 Term Days</li>
+                                        <li>Total return - 25%</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <form [formGroup]="basicForm" (ngSubmit)="basicPlan()">
+                                            <input type="hidden" formControlName="amount">
+                                            <button class="btn btn-light text-center purchase-btn mt-2">
+                                                <i class='bx bx-cart-add bx-sm'></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item card col-lg-3 col-md-12">
+                                <div class="card-body">
+                                    <div class="avatar lg rounded-circle no-thumbnail mb-3 fs-5">Diamond</div>
+                                    <small class="text-muted">Advance level of invest & earn to quickly.
+                                    </small>
+                                    <h4 class="mt-2">USD 12,500</h4>
+                                    <ul class="lh-lg mb-0 text-muted">
+                                        <li>10% Automated Weekly Payout</li>
+                                        <li>30 Term Days</li>
+                                        <li>Total return - 45%</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <form [formGroup]="premiumForm" (ngSubmit)="premiumPlan()">
+                                            <input type="hidden" formControlName="amount">
+                                            <button class="btn btn-light text-center purchase-btn mt-2">
+                                                <i class='bx bx-cart-add bx-sm'></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item card col-lg-3 col-md-12">
+                                <div class="card-body">
+                                    <div class="avatar lg rounded-circle no-thumbnail mb-3 fs-5">Platinum</div>
+                                    <small class="text-muted">Total</small>
+                                    <h4>USD 12,500</h4>
+                                    <ul class="lh-lg mb-0 text-muted">
+                                        <li>15% Automated Weekly Payout</li>
+                                        <li>30 Term Days</li>
+                                        <li>Total return - 60%</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <form [formGroup]="executiveForm" (ngSubmit)="executivePlan()">
+                                            <input type="hidden" formControlName="amount">
+                                            <button class="btn btn-light text-center purchase-btn mt-2">
+                                                <i class='bx bx-cart-add bx-sm'></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-12">
+
+                    <div class="card fieldset border border-muted table-responsive">
+                        <span class="fieldset-tile text-muted bg-body mt-3">All Invoices:</span>
+                        <table id="invoice_list" class="table card-table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="form-check" style="font-size: 16px;">
+                                            <input class="form-check-input select-all" type="checkbox" value="">
+                                        </div>
+                                    </th>
+                                    <th>Invoice</th>
+                                    <th>Name</th>
+                                    <th>Total</th>
+                                    <th>Date</th>
+                                    <th>Due Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-selectable">
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="">
+                                        </div>
+                                    </td>
+                                    <td> #RA0011 </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="../assets/img/xs/avatar1.jpg" class="rounded-circle sm avatar" alt="">
+                                            <div class="ms-2 mb-0">Andew Jon</div>
+                                        </div>
+                                    </td>
+                                    <td class="fw-bold">USD 12,820</td>
+                                    <td>Jan 16 2022</td>
+                                    <td>Jan 20 2022</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link btn-sm color-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="fa fa-pencil"></i></button>
+                                        <button type="button" class="btn btn-link btn-sm color-400" data-bs-toggle="modal" data-bs-target="#invoice_send"><i class="fa fa-envelope"></i></button>
+                                        <button type="button" class="btn btn-link btn-sm color-400" data-bs-toggle="modal" data-bs-target="#invoice_detail"><i class="fa fa-download"></i></button>
+                                        <button type="button" class="btn btn-link btn-sm color-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>
