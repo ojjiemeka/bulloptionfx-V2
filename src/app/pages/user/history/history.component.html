@@ -25,37 +25,53 @@
     <div class="page-body px-xl-4 px-sm-2 px-0 py-lg-2 py-1 mt-0 mt-lg-3">
         <div class="container-fluid">
             <div class="row g-2">
-                <div class="col-12">
+                <div class="col-md-12 table-responsive">
                     <table id="myDataTable" class="myDataTable table align-middle table-bordered mb-0 custom-table">
                         <thead>
                             <tr>
-                                <th>Transaction ID</th>
-                                <th>Date</th>
-                                <th>From</th>
-                                <th>To</th>
-                                <th>Coin</th>
-                                <th>Amount</th>
-                                <th>Note</th>
-                                <th>Status</th>
+                                <th class="text-uppercase text-center">Date</th>
+                                <th class="text-uppercase text-center">Status</th>
+                                <th class="text-uppercase text-center">Purpose</th>
+                                <th class="text-uppercase text-center">Amount</th>
+                                <th class="text-uppercase text-center">Currency Withdrawn</th>
+                                <th class="text-uppercase text-center">Wallet Address</th>
+                                <th class="text-uppercase text-center">Payment Option</th>
+                                <th class="text-uppercase text-center">Deposit Date</th>
+                                <th class="text-uppercase text-center">Withdrawal Date</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>#AS45453279</td>
-                                <td>2 May 2021</td>
-                                <td>Chris Fox</td>
+                            <tr *ngFor="let data of history">
+                                <!-- <td>{{serial}}</td> -->
+                                <td>{{data.entry_date}}</td>
                                 <td>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center link-secondary">
-                                        <img class="avatar sm rounded-circle" src="../assets/img/xs/avatar1.jpg" alt="">
-                                        <div class="flex-fill ms-3">
-                                            <div class="mb-0 h6">Maryam Amiri</div>
-                                        </div>
-                                    </a>
+                                    <span class="badge text-bg-warning" *ngIf="data.status === 'pending' ">
+                                        {{data.status}}
+                                    </span>
+                                    <span class="badge text-bg-danger" *ngIf="data.status === 'failed' ">
+                                        {{data.status}}
+                                    </span>
+                                    <span class="badge text-bg-success" *ngIf="data.status === 'approved' ">
+                                        {{data.status}}
+                                    </span>
                                 </td>
-                                <td>Bitcoin</td>
-                                <td>$1597.78</td>
-                                <td>None</td>
-                                <td><span class="badge bg-success">COMPLETED</span></td>
+                                <td>
+                                    <span class="badge withdraw-bg-success" *ngIf="data.purpose === 'withdrawal' ">
+                                        {{data.purpose}}
+                                    </span>
+                                    <span class="badge withdraw-bg-info" *ngIf="data.purpose === 'deposit' ">
+                                        {{data.purpose}}
+                                    </span>
+                                </td>
+                                <td>{{data.amount}}</td>
+                                <td>{{data.currency_withdrawn}}</td>
+                                <td>{{data.wallet_address}}</td>
+                                <td>{{data.payment_option}}</td>
+                                <td>{{data.entry_date}}</td>
+                                <td>{{data.withdraw_date}}</td>
+                                <!-- <td>{{data.}}</td> -->
+                                <!-- <td>None</td> -->
+                                <!-- <td><span class="badge bg-success">COMPLETED</span></td> -->
                             </tr>
                     </table>
                 </div>

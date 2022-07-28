@@ -9,7 +9,9 @@ import { UserDataService } from 'src/app/service/user-data.service';
 })
 export class HistoryComponent implements OnInit {
   UserProfile: any = null;
-  historyData: any;
+  history: any;
+  serial : any;
+
   constructor(
     private userDataService: UserDataService,
     private authService: AuthService,
@@ -17,6 +19,8 @@ export class HistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserData();
+    this.generateUniqSerial();
+    this.getHistoryData();
   }
 
   getUserData(){
@@ -27,7 +31,16 @@ export class HistoryComponent implements OnInit {
   }
 
   getHistoryData(){
-    
+    this.userDataService.getHistory().subscribe(
+      (data) => {
+        this.history = data.history;
+        console.log(data.history);
+      }
+    )
+  }
+
+  generateUniqSerial() {
+    this.serial = Math.floor(100000 + Math.random() * 900000);
   }
 
 }

@@ -1,0 +1,43 @@
+.text-bg-success {
+    color: #22b58f!important;
+    background-color: #404040;
+}
+
+.withdraw-bg-success {
+    color: #ada00a!important;
+    background-color: #fff;
+}
+
+.withdraw-bg-info {
+    color: #0793af!important;
+    background-color: #fff;
+}
+
+.text-bg-warning {
+    color: #FFC107!important;
+    background-color: #404040;
+}
+
+.text-bg-danger {
+    color: #d71d2f!important;
+    background-color: #404040;
+}
+
+.badge {
+    --bs-badge-padding-x: 0.65em;
+    --bs-badge-padding-y: 0.35em;
+    --bs-badge-font-size: 15px;
+    --bs-badge-font-weight: 500;
+    --bs-badge-color: #fff;
+    --bs-badge-border-radius: 0.375rem;
+    display: inline-block;
+    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+    font-size: var(--bs-badge-font-size);
+    font-weight: var(--bs-badge-font-weight);
+    line-height: 1;
+    color: var(--bs-badge-color);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: var(--bs-badge-border-radius);
+}

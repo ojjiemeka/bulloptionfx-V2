@@ -25,12 +25,20 @@ export class UserDataService {
   }
 
   getHistory(){
-    return this.http.get<any>(`${base_URL}/history`);
+    const httpOptions = { 
+      headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.accessToken
+        })
+      };
+  
+      return this.http.get<any>(this.$base_URL +'/history', httpOptions);
+
   }
 
-  showHistory(){
-    return JSON.parse(localStorage.getItem("history") || '{}')?.history;
-  }
+  // showHistory(){
+  //   return JSON.parse(localStorage.getItem("history") || '{}')?.history;
+  // }
 
   getCurrency(){
     const httpOptions = { 
