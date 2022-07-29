@@ -5,28 +5,28 @@
 @media only screen and (max-width: 768px) {
     .bull-logo-light {
         position: relative;
-        left: 13.5em;
+        left: 0.1em;
     }
 }
 
 @media only screen and (max-width: 425px) {
     .bull-logo-light {
         position: relative;
-        left: 4.5em;
+        left: 0.1em;
     }
 }
 
 @media only screen and (max-width: 375px) {
     .bull-logo-light {
         position: relative;
-        left: 3.5em;
+        left: 0.4em;
     }
 }
 
 @media only screen and (max-width: 320px) {
     .bull-logo-light {
         position: relative;
-        left: 1.5em;
+        left: 0.1em;
     }
 }
 

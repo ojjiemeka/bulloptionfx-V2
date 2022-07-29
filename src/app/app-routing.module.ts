@@ -13,6 +13,8 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
 import { TradeComponent } from './pages/user/trade/trade.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { AuthGuard } from './guard/auth.guard';
+import { PasswordResetComponent } from './pages/auth/password-reset/password-reset.component';
+import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   // { path: '', component: WelcomeComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'index', component: WelcomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'forgot-password', component: ForgotPasswordComponent},
+  { path: 'password-reset', component: PasswordResetComponent},
   { path: 'dashboard', component: HomeComponent, canActivate:[AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate:[AuthGuard] },
   { path: 'trade', component: TradeComponent, canActivate:[AuthGuard] },

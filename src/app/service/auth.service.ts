@@ -73,4 +73,12 @@ export class AuthService {
       return this.http.post(this.$base_URL +'/logout', '', httpOptions);
   }
 
+  forgotPassword(body: any ){
+    return this.http.post<any>(this.$base_URL +'/forgot-password', body);
+  }
+
+  passwordReset(body: any){
+    return this.http.post<any>(this.$base_URL +'/reset-password', body);
+  }
+
 }

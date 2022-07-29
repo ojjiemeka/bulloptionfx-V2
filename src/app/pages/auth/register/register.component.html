@@ -51,10 +51,10 @@
                                             <input class="form-control" type="text" placeholder="Enter First Name" formControlName="fname" autocomplete="off" [ngClass]="{ 'is-invalid': f['fname'].errors }" />
                                             <div class="invalid-feedback">
 
-                                                <div *ngIf="f['fname'].touched">
+                                                <!-- <div *ngIf="f['fname'].touched">
                                                     Enter First Name
-                                                </div>
-                                                <div *ngIf="submitted">
+                                                </div> -->
+                                                <div *ngIf="f['fname'].errors?.['required']">
                                                     Enter First Name
                                                 </div>
                                             </div>
@@ -63,10 +63,10 @@
                                             <input class="form-control" type="text" placeholder="Enter Last Name" formControlName="lname" autocomplete="off" [ngClass]="{ 'is-invalid':f['lname'].errors }" />
                                             <div class="invalid-feedback">
 
-                                                <div *ngIf="f['lname'].touched">
+                                                <!-- <div *ngIf="f['lname'].touched">
                                                     Please enter Last Name
-                                                </div>
-                                                <div *ngIf="submitted">
+                                                </div> -->
+                                                <div *ngIf="f['lname'].errors?.['required']">
                                                     Please enter Last Name
                                                 </div>
                                             </div>
@@ -78,10 +78,10 @@
                                                 <label class="form-label fw-bolder  fs-6">Phonenumber</label>
                                                 <input class="form-control" type="number" placeholder="Enter Phone Number" formControlName="phonenumber" autocomplete="off" [ngClass]="{ 'is-invalid': f['phonenumber'].errors}" />
                                                 <div class="invalid-feedback">
-                                                    <div *ngIf="f['phonenumber'].touched">
+                                                    <!-- <div *ngIf="f['phonenumber'].touched">
                                                         Please enter Phonenumber
-                                                    </div>
-                                                    <div *ngIf="submitted">
+                                                    </div> -->
+                                                    <div *ngIf="f['phonenumber'].errors?.['required']">
                                                         Please enter Phonenumber
                                                     </div>
                                                 </div>
@@ -348,10 +348,10 @@
                                                       </select>
                                                     <span class="input-group-text"><i class='bx bx-chevron-down text-light' ></i></span>
                                                     <div class="invalid-feedback">
-                                                        <div *ngIf="f['nationality'].touched">
+                                                        <!-- <div *ngIf="f['nationality'].touched">
                                                             Please select a Country
-                                                        </div>
-                                                        <div *ngIf="submitted">
+                                                        </div> -->
+                                                        <div *ngIf="f['nationality'].errors?.['required']">
                                                             Please select a Country
                                                         </div>
                                                     </div>
@@ -363,10 +363,10 @@
                                             <label class="form-label fw-bolder  fs-6">Email</label>
                                             <input class="form-control" type="email" placeholder="Enter Email" formControlName="email" autocomplete="on" [ngClass]="{ 'is-invalid': f['email'].errors}" />
                                             <div class="invalid-feedback">
-                                                <div *ngIf="f['email'].touched">
+                                                <!-- <div *ngIf="f['email'].touched">
                                                     Please enter Email
-                                                </div>
-                                                <div *ngIf="submitted">
+                                                </div> -->
+                                                <div *ngIf="f['email'].errors?.['required']">
                                                     Please enter Email
                                                 </div>
                                             </div>
@@ -377,10 +377,10 @@
                                             <div class="input-group" id="datepicker1">
                                                 <input type="date" class="form-control" placeholder="dd-mm-yyyy" formControlName="dob" autofocus [ngClass]="{ 'is-invalid': f['dob'].errors}">
                                                 <div class="invalid-feedback">
-                                                    <div *ngIf="f['dob'].touched">
+                                                    <!-- <div *ngIf="f['dob'].touched">
                                                         Please enter Date of Birth
-                                                    </div>
-                                                    <div *ngIf="submitted">
+                                                    </div> -->
+                                                    <div *ngIf="f['dob'].errors?.['required']">
                                                         Please enter Date of Birth
                                                     </div>
                                                 </div>
@@ -398,9 +398,9 @@
                                                             <i class="bi bi-eye fs-2 d-none"></i>
                                                         </span>
                                                         <div class="invalid-feedback">
-                                                            <div *ngIf="submitted && f['password'].errors?.['required']">Password does not match</div>
-                                                            <div *ngIf=" f['password'].touched">Password is required</div>
-                                                            <div *ngIf=" f['password'].errors?.['minlength']">
+                                                            <!-- <div *ngIf="f['password'].errors?.['required']">Password does not match</div> -->
+                                                            <!-- <div *ngIf=" f['password'].touched">Password is required</div> -->
+                                                            <div *ngIf="f['password'].errors?.['minlength']">
                                                                 Password must be at least 6 characters
                                                             </div>
                                                         </div>
@@ -413,14 +413,13 @@
 
                                         <div class="col-md-6 mt-4">
                                             <div class="fv-row">
-                                                <label class="form-label fw-bolder  fs-6">Confirm
-                                                    Password</label>
+                                                <label class="form-label fw-bolder  fs-6">Confirm Password</label>
                                                 <input class="form-control" type="password" placeholder="Confirm Password" formControlName="password_confirmation" autocomplete="off" [ngClass]="{ 'is-invalid': submitted || f['password_confirmation'].errors }" />
                                                 <div class="invalid-feedback">
-                                                    <div *ngIf="submitted && f['password_confirmation'].errors?.['required']">
+                                                    <div *ngIf="f['password_confirmation'].errors?.['required']">
                                                         Password is required
                                                     </div>
-                                                    <div *ngIf="f['password_confirmation'].errors?.['confirmedValidator'] || f['password'].dirty">
+                                                    <div *ngIf="f['password_confirmation'].errors?.['confirmedValidator']">
                                                         Password does not match
                                                     </div>
                                                 </div>
@@ -429,26 +428,26 @@
                                     </div>
 
 
-                                    <div class="text-center mt-4">
+                                    <div class=" text-center mt-4 ">
                                         <div class="fv-row ">
-                                            <label class="form-check form-check-custom form-check-solid form-check-inline">
-                                            <input class="form-check-input" type="checkbox" formControlName="toc" value="1" />
-                                            <input type="checkbox" formControlName="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"/>
-                                            <span class="form-check-label fw-bold text-gray-700 fs-6">I Agree
-                                                <a href="#" class="ms-1 link-primary">Terms and conditions</a>.</span>
+                                            <label class="form-check form-check-custom form-check-solid form-check-inline ">
+                                            <input class="form-check-input " type="checkbox " formControlName="toc " value="1 " />
+                                            <input type="checkbox " formControlName="acceptTerms " class="form-check-input " [ngClass]="{ 'is-invalid': submitted && f[ 'acceptTerms'].errors } "/>
+                                            <span class="form-check-label fw-bold text-gray-700 fs-6 ">I Agree
+                                                <a href="# " class="ms-1 link-primary ">Terms and conditions</a>.</span>
                                         </label>
                                         </div>
 
-                                        <div class="">
-                                            <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to the Broker <a href="#" class="text-primary text-decoration-underline fst-normal fw-medium">Terms
+                                        <div class=" ">
+                                            <p class="mb-0 fs-12 text-muted fst-italic ">By registering you agree to the Broker <a href="# " class="text-primary text-decoration-underline fst-normal fw-medium ">Terms
                                                 of Use</a></p>
                                         </div>
                                     </div>
 
 
 
-                                    <div class="mt-4 text-center">
-                                        <button class="btn btn-primary btn-lg w-50 rounded-btn " type="submit">Sign Up</button>
+                                    <div class="mt-4 text-center ">
+                                        <button class="btn btn-primary btn-lg w-50 rounded-btn " type="submit ">Sign Up</button>
                                     </div>
                                 </form>
 

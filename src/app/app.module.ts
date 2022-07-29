@@ -24,6 +24,8 @@ import { LoadingSpinnerComponent } from './pages/inc/loading-spinner/loading-spi
 import { TradeComponent } from './pages/user/trade/trade.component';
 import { HistoryComponent } from './pages/user/history/history.component';
 import { SupportComponent } from './pages/user/support/support.component';
+import { PasswordResetComponent } from './pages/auth/password-reset/password-reset.component';
+import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,9 @@ import { SupportComponent } from './pages/user/support/support.component';
     LoadingSpinnerComponent,
     TradeComponent,
     HistoryComponent,
-    SupportComponent
+    SupportComponent,
+    PasswordResetComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

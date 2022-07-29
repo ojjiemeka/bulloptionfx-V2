@@ -106,4 +106,15 @@ export class UserDataService {
   return this.http.post<any>(this.$base_URL +'/withdraw?', body, httpOptions);
  }
 
+ supportMail(body: any){
+  const httpOptions = { 
+    headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.accessToken
+      })
+    };
+
+  return this.http.post<any>(this.$base_URL +'/mail?', body, httpOptions);
+ }
+
 }

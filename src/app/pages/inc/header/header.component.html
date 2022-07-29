@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
     <div class="container-fluid">
         <div class="navbar-left d-flex">
-            <button class="navbar-toggler color-900" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler color-900" type="button" (click)="change()" [ngClass]="{'active': !toggle, '': !toggle}">
         <i class="fa fa-bars"></i>
       </button>
             <a class="navbar-brand p-0" href="/dashboard">
@@ -28,7 +28,7 @@
                         <div class="dropdown-menu mega-dropdown card border-0 p-4 shadow">
                             <div class="row g-4">
                                 <div class="col-md-12">
-                                    <h6 class="">Menu</h6>
+                                    <h6 class="cus-menu">Menu</h6>
                                     <ul class="list-unstyled">
                                         <div class="cus-close-btn">
                                             <button type="button" class="btn-close" (click)="change()"></button>
@@ -128,9 +128,6 @@
                         </div>
                     </div>
                 </li>
-
-                <li class="ms-lg-2 ms-md-1 nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
-
             </ul>
         </div>
 

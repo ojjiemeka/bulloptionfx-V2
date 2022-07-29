@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
+import { UserDataService } from 'src/app/service/user-data.service';
 
 @Component({
   selector: 'app-support',
@@ -15,6 +16,7 @@ export class SupportComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
+    private userDataService: UserDataService,
 
   ) { }
 
@@ -39,7 +41,12 @@ export class SupportComponent implements OnInit {
   }
 
   supportBtn(){
-    console.log(this.supportForm.value)
+    // console.log(this.supportForm.value)
+    this.userDataService.supportMail(this.supportForm.value).subscribe(
+      (res) =>{
+        console.log(res)
+      }
+    )
   }
 
 }
