@@ -30,16 +30,17 @@ export class HeaderComponent implements OnInit {
   }
 
   logoutBtn(){
-    // this.authService.logout().subscribe(
-    //   data => {
-    //     // this.toast.show(data.message);
-    //     // localStorage.clear();
-    //     // this.router.navigate(['/login']);
-    //     console.log(data)
-    //   }
-    // )
+    this.authService.logout().subscribe(
+      data => {
+        // this.toast.show(data.message);
+        // localStorage.clear();
+        // this.router.navigate(['/login']);
+        console.log(data)
+      }
+    )
     console.log('clicked');
-    localStorage.clear();
+    // localStorage.clear();
+    //     this.router.navigate(['/login']);
 
   }
 }

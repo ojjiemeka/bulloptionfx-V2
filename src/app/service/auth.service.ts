@@ -42,12 +42,6 @@ export class AuthService {
     return this.http.get<any>(this.$base_URL +'/home/', httpOptions);
   }
 
-  /**
-   * This function takes in an id and a body, and then returns an observable of type any
-   * @param {any} id - The id of the user you want to update
-   * @param {any} body - This is the data that you want to update.
-   * @returns The updated user object.
-   */
   updateUser(id: any, body: any){
     const httpOptions = { 
       headers: new HttpHeaders({
