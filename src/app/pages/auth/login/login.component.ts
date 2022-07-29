@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.responseHandler(user);
         // this.reloadPage();
-        this.router.navigate(['/dashboard']);
+       
 
         if(user){
           // alert('Login Successful');
@@ -71,10 +71,10 @@ export class LoginComponent implements OnInit {
           this.token.handleToken(user.token);
           localStorage.setItem('userInfo', JSON.stringify(user));
           localStorage.setItem('isLoggedIn', JSON.stringify(this.isLoggedIn));
-          // this.router.navigate(['/dashboard']);
+          this.router.navigate(['dashboard']);
           // return user;
           // console.log(user.token);
-          // console.log(user);
+          console.log(user);
           // return user;
         }
       },

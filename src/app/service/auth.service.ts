@@ -14,7 +14,7 @@ export class AuthService {
 
   $base_URL = "http://127.0.0.1:8000/api";
 
-  accessToken: any = this.token.getToken()
+  accessToken: any = this.token.getToken();
 
   signup( data: any ){
     return this.http.post<any>(this.$base_URL +'/register/', data);
@@ -29,7 +29,9 @@ export class AuthService {
    * @returns A boolean value.
    */
   isLoggedIn(){
-    return !!this.accessToken;
+    const isLoggedIn = localStorage.getItem('auth_token');
+    return isLoggedIn;
+    // return !!this.accessToken;
   }
 
   getUser(){
@@ -59,14 +61,16 @@ export class AuthService {
    * @returns The access token is being returned.
    */
   logout(){
+    const token = localStorage.getItem('auth_token');
+
     const httpOptions = { 
       headers: new HttpHeaders({
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + this.accessToken
+          'Authorization': 'Bearer ' + token
         })
       };
   
-      return this.http.post<any>(this.$base_URL +'/logout', httpOptions);
+      return this.http.post(this.$base_URL +'/logout', '', httpOptions);
   }
 
 }

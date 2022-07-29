@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
     private authService: AuthService,
     private toast: HotToastService,
     private router: Router,
+    private http: HttpClient,
 
   ) { }
 
@@ -31,16 +33,12 @@ export class HeaderComponent implements OnInit {
 
   logoutBtn(){
     this.authService.logout().subscribe(
-      data => {
-        // this.toast.show(data.message);
-        // localStorage.clear();
-        // this.router.navigate(['/login']);
-        console.log(data)
+      (data) => {
+        localStorage.clear();
+        this.toast.show('Logged Out');
+        this.router.navigate(['/login']);
+        // console.log(data)
       }
-    )
-    console.log('clicked');
-    // localStorage.clear();
-    //     this.router.navigate(['/login']);
-
+    );
   }
 }
