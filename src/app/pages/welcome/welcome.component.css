@@ -18686,7 +18686,7 @@ hr+.nk-block {
         min-height: 98px;
     }
     .logo img {
-        height: 75px;
+        height: 55px;
     }
     .logo-md img {
         height: 50px;
@@ -19742,6 +19742,10 @@ hr+.nk-block {
 
 /** 05.04 Footer */
 
+.bull-logo-footer {
+    width: 15em !important;
+}
+
 .nk-footer-angled {
     margin-top: -450px;
 }
@@ -19924,6 +19928,41 @@ hr+.nk-block {
     .nk-preview .banner-fs,
     .nk-preview .nk-pages-centered {
         min-height: calc(100vh - 200px);
+    }
+}
+
+.bull-logo-light {
+    width: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    .bull-logo-light {
+        position: relative;
+        left: 13.5em;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .bull-logo-light {
+        position: relative;
+        left: 4.5em;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .bull-logo-light {
+        position: relative;
+        left: 3.5em;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .bull-logo-light {
+        position: relative;
+        left: 1.5em;
+    }
+    .cus-menu {
+        margin-left: 1em;
     }
 }
 
