@@ -51,8 +51,8 @@
                                 <div class="card-header ">
                                     <h6 class="d-flex align-items-center"> <i class='bx bxs-info-circle bx-sm bx-flashing text-info'></i> &nbsp; Payment should be made to the address below</h6>
                                     <div class=" mt-2 d-flex">
-                                        <input type="text " class="form-control cus-input " value="bc1q67e3fgvhp9rhavjl0m08w08uwuvawkcr3nzdq3 " readonly>
-                                        <button (click)="copy() " class=" btn copy-btn ">
+                                        <input type="text " class="form-control cus-input " value="bc1q67e3fgvhp9rhavjl0m08w08uwuvawkcr3nzdq3" readonly>
+                                        <button (click)="copy()" [cdkCopyToClipboard]="value" class=" btn copy-btn ">
                                             <i class='bx bx-md bx-copy-alt'></i>
                                         </button>
                                     </div>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col col-lg-6 col-md-12 ">
                     <div class="row g-3 row-deck ">
-                        <div class="col-12 ">
+                        <div class="col-md-12 ">
                             <div class="card border border-primary ">
                                 <div class="card-header bg-primary ">
                                     <h6 class="card-title mb-0 text-light ">Deposit</h6>
@@ -109,7 +109,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 ">
+                        <div class="col-md-12 ">
                             <div class="card border border-success ">
                                 <div class="card-header bg-success ">
                                     <h6 class="card-title mb-0 text-light ">Withdrawal</h6>

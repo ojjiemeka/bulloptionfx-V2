@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit {
     this.userDataService.getLogData().subscribe(
       res => {
         this.notification = res.log.data;
-        console.log(res.log.data);
+        // console.log(res.log.data);
       }
     )
   }

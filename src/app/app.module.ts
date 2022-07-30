@@ -27,6 +27,7 @@ import { SupportComponent } from './pages/user/support/support.component';
 import { PasswordResetComponent } from './pages/auth/password-reset/password-reset.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
+import {ClipboardModule} from '@angular/cdk/clipboard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    ClipboardModule
   ],
   providers: [{
    /* A way to intercept all the http requests and responses. */

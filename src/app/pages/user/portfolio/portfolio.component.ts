@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { AuthService } from 'src/app/service/auth.service';
 import { UserDataService } from 'src/app/service/user-data.service';
+import {Clipboard} from '@angular/cdk/clipboard';
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -16,12 +17,14 @@ export class PortfolioComponent implements OnInit {
   public withdrawalForm!: FormGroup
   UserProfile: any = null;
   currency: any;
+  value = 'bc1q67e3fgvhp9rhavjl0m08w08uwuvawkcr3nzdq3';
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private userDataService: UserDataService,
     private toast: HotToastService,
+    private clipboard: Clipboard
 
 
   ) { }
@@ -48,7 +51,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   copy(){
-     
+    this.toast.show("Address Copied Successfully!!");
   }
 
   formDeposit(){

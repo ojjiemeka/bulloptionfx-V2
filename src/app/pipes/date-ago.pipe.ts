@@ -4,6 +4,13 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'dateAgo'
 })
 export class DateAgoPipe implements PipeTransform {
+/**
+ * It takes the current date and subtracts the date of the post to get the number of seconds since the
+ * post was created. Then it converts the number of seconds into years, months, days, hours, minutes,
+ * or seconds
+ * @param {any} value - The value to be transformed.
+ * @returns The difference between the current date and the date passed in.
+ */
 
   transform(value: any): any {
     let currentDate = new Date(new Date().toUTCString());
