@@ -43,7 +43,7 @@ export class ForgotPasswordComponent implements OnInit {
       
       }
     )
-    console.log(this.forgotPasswordForm.value);
+    // console.log(this.forgotPasswordForm.value);
   }
 
 

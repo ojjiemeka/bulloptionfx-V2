@@ -26,6 +26,7 @@ import { HistoryComponent } from './pages/user/history/history.component';
 import { SupportComponent } from './pages/user/support/support.component';
 import { PasswordResetComponent } from './pages/auth/password-reset/password-reset.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-pas
     HistoryComponent,
     SupportComponent,
     PasswordResetComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,6 @@ import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-pas
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-
   ],
   providers: [{
    /* A way to intercept all the http requests and responses. */

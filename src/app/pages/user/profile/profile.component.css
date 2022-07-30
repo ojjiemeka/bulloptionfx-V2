@@ -40,3 +40,11 @@ p,
 span {
     font-family: Nunito, sans-serif !important;
 }
+
+img {
+    filter: none
+}
+
+img:hover {
+    filter: saturate(0.5);
+}

@@ -12,3 +12,32 @@ span {
 h6 {
     font-size: 15px;
 }
+
+.plans {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .plans {
+        display: contents !important;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .plans {
+        display: contents !important;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .plans {
+        display: contents !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .plans {
+        display: contents !important;
+    }
+}

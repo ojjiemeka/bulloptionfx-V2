@@ -33,7 +33,17 @@ export class UserDataService {
       };
   
       return this.http.get<any>(this.$base_URL +'/history', httpOptions);
+  }
 
+  getLogData(){
+    const httpOptions = { 
+      headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.accessToken
+        })
+      };
+  
+      return this.http.get<any>(this.$base_URL +'/log', httpOptions);
   }
 
   // showHistory(){

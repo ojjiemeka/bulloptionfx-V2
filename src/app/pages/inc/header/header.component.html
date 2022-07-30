@@ -147,78 +147,31 @@
                     <div id="NotificationsDiv" class="dropdown-menu shadow rounded-4 border-0 p-0 m-0">
                         <div class="card w380 overflow-hidden">
                             <div class="card-header p-3">
-                                <h6 class="card-title mb-0">Notifications Center</h6>
-                                <span class="badge bg-danger text-light">14</span>
+                                <h6 class="card-title mb-0">Notifications</h6>
                             </div>
-                            <ul class="nav nav-tabs tab-card d-flex text-center" role="tablist">
-                                <!-- <li class="nav-item flex-fill"><a class="nav-link active" data-bs-toggle="tab" href="#Noti-tab-Message" role="tab">Message</a></li> -->
-                                <li class="nav-item flex-fill"><a class="nav-link" data-bs-toggle="tab" href="#Noti-tab-Events" role="tab">Events</a></li>
-                                <li class="nav-item flex-fill"><a class="nav-link" data-bs-toggle="tab" href="#Noti-tab-Logs" role="tab">Logs</a></li>
-                            </ul>
                             <div class="tab-content card-body custom_scroll">
                                 <div class="tab-pane fade show active" id="Noti-tab-Message" role="tabpanel">
                                     <ul class="list-unstyled list mb-0">
-                                        <li class="py-2 mb-1 border-bottom">
-                                            <a href="javascript:void(0);" class="d-flex">
-                                                <img class="avatar rounded-circle" src="assets/img/xs/avatar1.jpg" alt="">
+                                        <li class="py-2 mb-1 border-bottom" *ngFor=" let log of notification">
+                                            <a class="d-flex align-items-center">
+                                                <div class="rounded-icon">
+                                                    <i class='bx bxs-hourglass icon-warning icon-size' *ngIf="log.status == 'pending' "></i>
+                                                    <i class='bx bx-check-double icon-success icon-size' *ngIf="log.status == 'approved' "></i>
+                                                    <i class='bx bx-x icon-size icon-danger' *ngIf="log.status == 'failed' "></i>
+                                                </div>
                                                 <div class="flex-fill ms-3">
-                                                    <p class="d-flex justify-content-between mb-0"><span>Rose Bush</span> <small>2MIN</small>
-                                                    </p>
-                                                    <span>changed an issue from "In Progress" to <span
-                              class="badge bg-success">Review</span></span>
+                                                    <p class="d-flex justify-content-between mb-0"><span>{{log.message}}</span> <small>{{log.created_at | dateAgo}}</small></p>
+                                                    <span>changed an issue from "In Progress" to </span>
+                                                    <span class="badge text-bg-warning" *ngIf="log.status == 'pending' ">{{log.status}}</span>
+                                                    <span class="badge text-bg-success" *ngIf="log.status == 'approved' ">{{log.status}}</span>
+                                                    <span class="badge text-bg-danger" *ngIf="log.status == 'failed' ">{{log.status}}</span>
                                                 </div>
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="tab-pane fade" id="Noti-tab-Events" role="tabpanel">
-                                    <ul class="list-unstyled list mb-0">
-                                        <li class="py-2 mb-1 border-bottom">
-                                            <a href="javascript:void(0);" class="d-flex">
-                                                <div class="avatar rounded-circle no-thumbnail"><i class="fa fa-thumbs-up fa-lg"></i></div>
-                                                <div class="flex-fill ms-3">
-                                                    <p class="mb-0">Your New Campaign <strong class="text-primary">Holiday Sale</strong> is approved.
-                                                    </p>
-                                                    <small>11:30 AM Today</small>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="py-2 mb-1 border-bottom">
-                                            <a href="javascript:void(0);" class="d-flex">
-                                                <div class="avatar rounded-circle no-thumbnail"><i class="fa fa-pie-chart fa-lg"></i></div>
-                                                <div class="flex-fill ms-3">
-                                                    <p class="mb-0">Website visits from Twitter is <strong class="text-danger">27%
-                              higher</strong> than last week.</p>
-                                                    <small>04:00 PM Today</small>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="py-2 mb-1 border-bottom">
-                                            <a href="javascript:void(0);" class="d-flex">
-                                                <div class="avatar rounded-circle no-thumbnail"><i class="fa fa-info-circle fa-lg"></i></div>
-                                                <div class="flex-fill ms-3">
-                                                    <p class="mb-0">Campaign <strong class="text-primary">Holiday Sale</strong> is nearly reach budget limit.</p>
-                                                    <small>10:00 AM Today</small>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="py-2 mb-1 border-bottom">
-                                            <a href="javascript:void(0);" class="d-flex">
-                                                <div class="avatar rounded-circle no-thumbnail"><i class="fa fa-warning fa-lg"></i></div>
-                                                <div class="flex-fill ms-3">
-                                                    <p class="mb-0"><strong class="text-warning">Error</strong> on website analytics configurations
-                                                    </p>
-                                                    <small>Yesterday</small>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="tab-pane fade" id="Noti-tab-Logs" role="tabpanel">
-                                    <h4 class="color-400">No Logs right now!</h4>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary text-light rounded-0">View all notifications</a>
+                            <!-- <a href="#" class="btn btn-primary text-light rounded-0">View all notifications</a> -->
                         </div>
                     </div>
                 </div>
@@ -245,16 +198,14 @@
                             <div class="card-body border-bottom d-flex">
                                 <img class="avatar rounded-circle" src="assets/img/profile_av.png" alt="">
                                 <div class="flex-fill ms-3">
-                                    <h6 class="card-title mb-0">Allie Grater</h6>
-                                    <span class="text-muted"><a href="https://www.wrraptheme.com/cdn-cgi/l/email-protection"
-                      class="__cf_email__"
-                      data-cfemail="6b0a0707020e0c190a1f0e192b071e050445080406">[email&#160;protected]</a></span>
+                                    <h6 class="card-title mb-0">{{UserProfile.fname}} {{UserProfile.lname}}</h6>
+                                    <span class="text-muted">{{UserProfile.email}}</span>
                                 </div>
                             </div>
                             <div class="list-group m-2 mb-3">
                                 <a class="list-group-item list-group-item-action border-0" href="/profile"><i
                     class="w30 fa fa-user"></i>Profile & account</a>
-                                <a class="list-group-item list-group-item-action border-0" href="/account-settings"><i
+                                <a class="list-group-item list-group-item-action border-0" href="/edit-profile/{{UserProfile.id}}"><i
                     class="w30 fa fa-gear"></i>Settings</a>
                                 <!-- <a class="list-group-item list-group-item-action border-0" href="page-support-ticket.html"><i
                     class="w30 fa fa-tag"></i>Support Ticket</a> -->

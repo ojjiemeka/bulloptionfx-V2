@@ -15,7 +15,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 export class EditProfileComponent implements OnInit {
 
   public editForm!: FormGroup
-  public editPasswordForm!: FormGroup
+  public changePasswordForm!: FormGroup
   submitted = false;
   error: any;
   roq: any
@@ -63,14 +63,7 @@ export class EditProfileComponent implements OnInit {
    * storage. The user data is stored in the variable UserProfile
    */
   getUserData(){
-    // this.authService.getUser().subscribe(user =>{
-    //   this.UserProfile = user.user;
-    //   console.log(this.UserProfile); 
-    // });
     this.UserProfile = (this.userDataService.getLocalUser());
-      // console.log(this.UserProfile)  
-      // console.log(this.UserProfile['fname'])  
-      // console.log('removed this');
   }
 
   /**
@@ -78,7 +71,6 @@ export class EditProfileComponent implements OnInit {
    */
   editProfile(){
     this.editForm = new FormGroup({
-      // id: new FormControl (this.UserProfile['id'] ),
       fname: new FormControl (this.UserProfile['fname'] ),
       lname: new FormControl (this.UserProfile['lname'] ),
       email: new FormControl (this.UserProfile['email']),
@@ -117,7 +109,6 @@ export class EditProfileComponent implements OnInit {
     });
 
     setTimeout(() => location.reload(),2000);
-      // this.router.navigate(['/profile']);
   }
 
   /**
@@ -127,53 +118,30 @@ export class EditProfileComponent implements OnInit {
    * used to validate the password_confirmation form control
    */
   changePassword(){
-    this.editPasswordForm = this.formBuilder.group({
-      old_password: ['', [Validators.required, Validators.minLength(8)]],
-      new_password: ['', [Validators.required, Validators.minLength(8)]],
-      password_confirmation: ['', [Validators.required]]
-    },
-    {
-      validator: this.ConfirmedValidator('new_password', 'password_confirmation'),
-    }
-    )
-  }
-
-   /**
-   * It returns the controls of the loginForm
-   * @returns The form controls.
-   */
-    get f() {
-      return this.editPasswordForm.controls;
-    }
-
-  /**
-   * If the value of the controlName control is not equal to the value of the matchingControlName
-   * control, then set the confirmedValidator error on the matchingControlName control
-   * @param {string} controlName - The name of the control that you want to validate.
-   * @param {string} matchingControlName - The name of the control that we want to compare the value of
-   * the controlName control to.
-   * @returns A function that takes a formGroup as a parameter.
-   */
-  ConfirmedValidator(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
-      if (
-        matchingControl.errors &&
-        !matchingControl.errors['confirmedValidator']
-      ) {
-        return;
-      }
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ confirmedValidator: true });
-      } else {
-        matchingControl.setErrors(null);
-      }
-    };
+    this.changePasswordForm = this.formBuilder.group({
+      email: [this.UserProfile['email'], Validators.required],
+    })
   }
 
   changePasswordBtn(){
-    console.log(this.editPasswordForm.value);
+    this.authService.forgotPassword(this.changePasswordForm.value).subscribe({
+      next: data => {
+        this.toast.success(data.status);
+        // console.log(data.status)
+      },
+      error: err => {
+        this.toast.error('Please wait before retrying.');
+        // console.log('Please wait before retrying.');
+        // console.log(err.errors);
+
+      }
+      
+      }
+    )
+  }
+
+  saveOptionBtn(){
+    this.toast.success('Your preferences have been saved');
   }
 
 }

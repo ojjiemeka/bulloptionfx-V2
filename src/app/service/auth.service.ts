@@ -55,6 +55,17 @@ export class AuthService {
     return this.http.put<any>(this.$base_URL +'/profiles/'+id, body, httpOptions);
   }
 
+  changePassword(id: any, body: any){
+    const httpOptions = { 
+      headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.accessToken
+        })
+      };
+
+    return this.http.put<any>(this.$base_URL +'/change-passwords/'+id, body, httpOptions);
+  }
+
   /**
    * The function takes the access token from the local storage and sends it to the backend to be
    * destroyed
