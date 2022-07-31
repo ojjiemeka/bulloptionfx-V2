@@ -10,3 +10,21 @@
 .market-cap {
     display: contents;
 }
+
+.text-light{
+    color: #fff
+}
+
+.btn-success {
+    background-color: #17945a;
+    border: none;
+    /* border-color: #39d884; */
+}
+
+.btn-success:hover {
+    background-color: #116e43;
+}
+
+.card{
+    padding: 0;
+}

@@ -16,3 +16,4 @@ node_modules
 .vscode/extensions.json
 .vscode/launch.json
 .vscode/tasks.json
+src/app/pages/inc/header/header.component.css

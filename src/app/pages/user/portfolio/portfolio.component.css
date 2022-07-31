@@ -38,4 +38,9 @@ h6,
 p,
 span {
     font-family: Nunito, sans-serif !important;
+    color: #fff;
+}
+
+.card {
+    padding: 0 !important;
 }

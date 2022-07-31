@@ -18,8 +18,8 @@ import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-pas
 
 const routes: Routes = [
   // { path: '', component: WelcomeComponent },
-  { path: '', redirectTo: 'index', pathMatch: 'full'},
-  { path: 'index', component: WelcomeComponent},
+  // { path: '', redirectTo: 'index', pathMatch: 'full'},
+  { path: '', component: WelcomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent},
@@ -34,14 +34,15 @@ const routes: Routes = [
   { path: 'support', component: SupportComponent, canActivate:[AuthGuard] },
   
   /* This is a wildcard route. It will match any route that is not defined. */
-  { path: '**', component: ErrorComponent}
+  // { path: '**', component: ErrorComponent}
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [AuthGuard,
+  ]
 })
 export class AppRoutingModule { }

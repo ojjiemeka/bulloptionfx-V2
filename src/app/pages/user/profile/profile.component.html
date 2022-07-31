@@ -7,7 +7,7 @@
             <div class="row g-3 mb-1 align-items-center">
                 <div class="col">
                     <ol class="breadcrumb bg-transparent mb-0">
-                        <li class="breadcrumb-item"><a class="text-secondary" href="/dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-secondary" routerLink="/dashboard">Home</a></li>
                         <!-- <li class="breadcrumb-item"><a class="text-secondary" href="crafted-page.html">Crafted pages</a></li> -->
                         <li class="breadcrumb-item active" aria-current="page">My Account</li>
                     </ol>
@@ -20,13 +20,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="">
                         <div class="card-body border-bottom">
                             <div class="d-flex align-items-md-start align-items-center flex-column flex-md-row">
                                 <img src="../assets/img/profile_av.png" alt="" class="rounded-4">
                                 <div class="media-body ms-md-5 m-0 mt-4 mt-md-0 text-md-start text-center">
-                                    <h4 class="mb-1 fw-light">{{UserProfile.fname}} {{UserProfile.lname}}
-                                        <a href="/edit-profile/{{UserProfile.id}}" class="fa fa-pencil-square-o fs-5 ms-2" title="Edit Profile"></a>
+                                    <h4 class="fs-4 fw-light mb-1 text-capitalize">{{UserProfile.fname}} {{UserProfile.lname}}
+                                        <a routerLink="/edit-profile/{{UserProfile.id}}" class="fa fa-pencil-square-o fs-5 ms-2" title="Edit Profile"></a>
                                         <!-- <a href="#" class="fa fa-pencil-square-o fs-6 ms-2" data-bs-toggle="offcanvas" data-bs-target="#edit_profile" title="Edit Profile"></a> -->
                                     </h4>
                                     <span class="text-muted">You have full control to manage your own account setting..</span>
@@ -57,9 +57,9 @@
                             </div>
                         </div>
                         <ul class="nav nav-tabs tab-card border-bottom-0 pt-2 fs-6 justify-content-center justify-content-md-start" role="tablist">
-                            <li class="nav-item d-flex"><a class="nav-link active d-flex" data-bs-toggle="tab" href="#profile_post" role="tab"><span>Overview</span></a></li>
+                            <li class="nav-item d-flex"><a class="nav-link active d-flex" data-bs-toggle="tab" routerLink="#profile_post" role="tab"><span>Overview</span></a></li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex" data-bs-toggle="tab" href="#profile_groups" role="tab">
+                                <a class="nav-link d-flex" data-bs-toggle="tab" routerLink="#profile_groups" role="tab">
                                     <i class='bx bxs-lock bx-sm'></i>
                                     <span class="d-none d-sm-inline-block ms-2">Security</span></a>
                             </li>
@@ -81,15 +81,15 @@
                                                 <a class="text-info">&nbsp; Click here</a>
                                             </p>
                                             <ul class="list-unstyled mb-0">
-                                                <li class="py-2"><span class="text-muted me-2 w90 d-inline-block">Full Name:</span>{{UserProfile.fname}} {{UserProfile.lname}}
+                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Full Name:</span>{{UserProfile.fname}} {{UserProfile.lname}}
                                                 </li>
-                                                <li class="py-2"><span class="text-muted me-2 w90 d-inline-block">E-mail:</span><a class="__cf_email__">{{UserProfile.email}}</a></li>
-                                                <li class="py-2"><span class="text-muted me-2 w90 d-inline-block">Phone:</span>{{UserProfile.phonenumber}}
+                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">E-mail:</span><a class="__cf_email__">{{UserProfile.email}}</a></li>
+                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Phone:</span>{{UserProfile.phonenumber}}
                                                 </li>
-                                                <li class="py-2"><span class="text-muted me-2 w90 d-inline-block">Date of Birth:</span>{{UserProfile.dob}}
+                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Date of Birth:</span>{{UserProfile.dob}}
                                                 </li>
                                                 <!-- <li class="py-2"><span class="text-muted me-2 w90 d-inline-block">Address:</span>http://website.com</li> -->
-                                                <li class="py-2"><span class="text-muted me-2 w90 d-inline-block">Country</span> {{UserProfile.nationality}} </li>
+                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Country</span> {{UserProfile.nationality}} </li>
                                                 <div *ngIf="UserProfile.verification_status == 'unverified' ">
                                                     <li class="py-2 d-flex align-items-center"><span class="text-muted me-2 w90 d-inline-block">Verification Status</span> <span class="badge badge-danger">{{UserProfile.verification_status}}</span> </li>
                                                 </div>
@@ -143,7 +143,7 @@
                                         <div class="media-body ms-0 ms-4 ms-xxl-5 text-md-start text-center w-100 mt-4 mt-md-0">
                                             <div class=" g-0 d-flex">
                                                 <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-6 mb-3 mb-lg-0">
-                                                    <a href="/edit-profile/{{UserProfile.id}}#list-item-2">
+                                                    <a routerLink="/edit-profile/{{UserProfile.id}}#list-item-2">
                                                         <h6 class="mb-1">Change Password</h6>
                                                         <div class="text-muted">Set a unique password to protect your account.</div>
                                                     </a>
@@ -163,7 +163,7 @@
                                         <div class="media-body ms-0 ms-4 ms-xxl-5 text-md-start text-center w-100 mt-4 mt-md-0">
                                             <div class=" g-0 d-flex">
                                                 <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-6 mb-3 mb-lg-0">
-                                                    <a href="/edit-profile/{{UserProfile.id}}#list-item-3">
+                                                    <a routerLink="/edit-profile/{{UserProfile.id}}#list-item-3">
                                                         <h6 class="mb-1">Save Activity Logs</h6>
                                                         <div class="text-muted">You can save your all activity logs including unusual activity detected.</div>
                                                     </a>

@@ -39,6 +39,11 @@ h6,
 p,
 span {
     font-family: Nunito, sans-serif !important;
+    color: #fff;
+}
+
+a{
+    color: var(--primary-color);
 }
 
 img {
@@ -47,4 +52,8 @@ img {
 
 img:hover {
     filter: saturate(0.5);
+}
+
+.btn{
+    border:none
 }

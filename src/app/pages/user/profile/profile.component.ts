@@ -20,21 +20,21 @@ export class ProfileComponent implements OnInit {
     this.getUserData();
   }
 
-  // getUserData(){
-  //   this.UserProfile = (this.userDataService.getLocalUser());
-  //     console.log(this.UserProfile)  
-  // }
+  getUserData(){
+    this.UserProfile = (this.userDataService.getLocalUser());
+      console.log(this.UserProfile)  
+  }
 
  /**
   * The function is called when the user clicks on the profile button in the navbar. It calls the
   * getUser() function in the authService.ts file, which returns the user's data from the database. The
   * user's data is then stored in the UserProfile variable
   */
-  getUserData(){
-    this.authService.getUser().subscribe(user =>{
-      this.UserProfile = user.user;
-      // console.log(this.UserProfile)  
-    });
-  }
+  // getUserData(){
+  //   this.authService.getUser().subscribe(user =>{
+  //     this.UserProfile = user.user;
+  //     // console.log(this.UserProfile)  
+  //   });
+  // }
 
 }

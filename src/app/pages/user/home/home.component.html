@@ -5,21 +5,21 @@
         <div class="row g-3 mb-4">
             <div class="col">
                 <ul class="breadcrumb bg-transparent mb-0">
-                    <li class="breadcrumb-item"><a class="text-secondary" href="/dashboard">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-secondary" routerLink="/dashboard">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ul>
             </div>
             <div class="col">
                 <!-- <ul class="list-unstyled d-sm-flex justify-content-end mb-0 d-none">
-                    <li><a class="color-400" href="docs/index.html">Documentation</a></li>
-                    <li><a class="color-400 ms-4" href="docs/doc-changelog.html">Changelog</a></li>
+                    <li><a class="color-400" routerLink="docs/index.html">Documentation</a></li>
+                    <li><a class="color-400 ms-4" routerLink="docs/doc-changelog.html">Changelog</a></li>
                 </ul> -->
             </div>
         </div>
         <div class="row g-3">
             <div class=" col-lg-9 col-md-12">
                 <div class="welcome-text">
-                    <h1 class="fs-4 mb-1">Hello, {{UserProfile.fname}}</h1>
+                    <h1 class="fs-4 mb-1 text-light">Hello, {{UserProfile.fname}}</h1>
                     <span class="text-muted">Welcome back to your dashboard</span>
                 </div>
             </div>
@@ -28,20 +28,20 @@
                     <div class="flex-fill ms-3 text-truncate">
                         <i class="avatar text-light rounded-circle fa fa-bank fa-lg"></i>
                         <div class="small text-uppercase">Balance</div>
-                        <div><span class="h6 mb-0">${{UserProfile.balance}}</span></div>
+                        <div><span class="h6 mb-0 text-light">${{UserProfile.balance}}</span></div>
                     </div>
                     <div class="flex-fill ms-3 text-truncate">
                         <!-- <i class="avatar text-primary rounded-circle fa fa-bank fa-lg"></i> -->
                         <i class="avatar text-light rounded-circle bx bx-trending-up bx-md"></i>
                         <div class="small text-uppercase">Profit</div>
-                        <div><span class="h6 mb-0">${{UserProfile.profit}}</span></div>
+                        <div><span class="h6 mb-0 text-light">${{UserProfile.profit}}</span></div>
                     </div>
                 </div>
             </div>
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
                     <ul class="nav nav-tabs tab-card border-0 px-0" role="tablist">
-                        <li class="nav-item"><a class="text-uppercase nav-link active" data-bs-toggle="tab" data-bs-target="#dash_dashboard" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="text-uppercase nav-link active" data-bs-toggle="tab" data-bs-target="#dash_dashboard">Dashboard</a></li>
                     </ul>
 
                 </div>
@@ -122,11 +122,11 @@
                     </div>
                 </div>
                 <div class="col-12 mt-4">
-                    <h5 class="fw-bold mb-2">Quick Exchange</h5>
+                    <h5 class="fw-bold mb-2 text-light fs-6">Quick Exchange</h5>
                     <div class="card">
                         <div class="card-body">
                             <form action="" method="post">
-                                <p>Buy crypto with ease <a href="#">View more</a></p>
+                                <p class="text-light">Buy crypto with ease <a>View more</a></p>
                                 <div class="row g-2">
                                     <div class="col-md-6 col-lg-4 col-xl-4">
                                         <div class="form-floating">
@@ -156,8 +156,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12 mt-3 d-flex">
-                                        <button type="button" class="btn btn-outline-primary btn-lg mx-2">Deposit</button>
-                                        <button type="button" class="btn btn-primary btn-lg">Withdraw</button>
+                                        <button type="button" class="btn btn-outline-primary mx-2">Deposit</button>
+                                        <button type="button" class="btn btn-success">Withdraw</button>
                                     </div>
                                 </div>
                             </form>
@@ -170,10 +170,10 @@
                     <div class="card">
                         <ul class="nav nav-tabs tab-card pt-3 " role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-bs-toggle="tab" href="#nav-BTC" id="nav_BTC" role="tab">
+                                <a class="nav-link active" data-bs-toggle="tab" routerLink="#nav-BTC" id="nav_BTC" role="tab">
                                     <span class="d-inline d-sm-none">
                     <img class="avatar sm me-1" src="../assets/img/coin/BTC.svg" alt="BTC">BTC </span>
-                                    <span class="d-none d-sm-inline">Bitcoin</span>
+                                    <span class="d-none d-sm-inline fs-6">Bitcoin</span>
                                 </a>
                             </li>
                         </ul>
@@ -211,7 +211,7 @@
                 <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h6 class="card-title m-0">Market Cap</h6>
+                            <h6 class="card-title fs-4 m-0">Market Cap</h6>
                         </div>
                         <div>
                             <ul class="list-group list-group-flush list-group-custom mb-0">

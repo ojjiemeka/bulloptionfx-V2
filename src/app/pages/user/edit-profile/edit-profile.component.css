@@ -16,3 +16,24 @@ span {
 h6 {
     font-size: 15px;
 }
+
+.btn{
+    border: none !important
+}
+
+.btn-outline-light:hover {
+    color: #191a1c  !important;
+    background-color: #f8f9fa  !important;
+    border-color: #f8f9fa  !important;
+    font-weight: bolder  !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    /* background-color: #23c99d; */
+    background-color: #373b72 !important;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+    background-color: #3a4564  !important;
+    border-color: #1d2334 !important;
+}

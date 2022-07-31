@@ -5,7 +5,7 @@
                 <div class="col-lg-12">
                     <div class="text-center mt-sm-5 mb-4 text-white-50">
                         <div>
-                            <a href="/" class="d-inline-block auth-logo">
+                            <a routerLink="/" class="d-inline-block auth-logo">
                                 <img src="https://bull-option.com/images/bull-logo1.png" alt="" height="20" class="bull-logo">
                             </a>
                         </div>
@@ -26,7 +26,7 @@
                                 </div>
 
                                 <div>
-                                    <a href="/" class="d-inline-block auth-logo">
+                                    <a routerLink="/" class="d-inline-block auth-logo">
                                         <img src="../../../../assets/images/Bull-logo-light.png" alt="" class="bull-logo" srcset="">
                                     </a>
                                 </div>
@@ -34,7 +34,7 @@
 
                             <div class="p-2 mt-3">
                                 <div class="mt-4 row">
-                                    <p>Already have an account ? <a href="/login" class="fw-semibold link-text fw-bolder">&nbsp; &nbsp;  Signin </a> </p>
+                                    <p class="text-primary">Already have an account ? <a routerLink="/login" class="fw-semibold link-text fw-bolder">&nbsp; &nbsp;  Signin </a> </p>
                                 </div>
 
                                 <div class="mt-2 row" *ngIf="signupForm.invalid">
@@ -393,10 +393,10 @@
                                                     <label class="form-label fw-bolder  fs-6">Password</label>
                                                     <div class="position-relative mb-3">
                                                         <input class="form-control" type="password" placeholder="Enter Password" formControlName="password" autocomplete="off" [ngClass]="{ 'is-invalid': submitted || f['password'].errors}" />
-                                                        <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+                                                        <!-- <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                                                             <i class="bi bi-eye-slash fs-2"></i>
                                                             <i class="bi bi-eye fs-2 d-none"></i>
-                                                        </span>
+                                                        </span> -->
                                                         <div class="invalid-feedback">
                                                             <!-- <div *ngIf="f['password'].errors?.['required']">Password does not match</div> -->
                                                             <!-- <div *ngIf=" f['password'].touched">Password is required</div> -->
@@ -434,12 +434,12 @@
                                             <input class="form-check-input " type="checkbox " formControlName="toc " value="1 " />
                                             <input type="checkbox " formControlName="acceptTerms " class="form-check-input " [ngClass]="{ 'is-invalid': submitted && f[ 'acceptTerms'].errors } "/>
                                             <span class="form-check-label fw-bold text-gray-700 fs-6 ">I Agree
-                                                <a href="# " class="ms-1 link-primary ">Terms and conditions</a>.</span>
+                                                <a routerLink="# " class="ms-1 link-primary ">Terms and conditions</a>.</span>
                                         </label>
                                         </div>
 
                                         <div class=" ">
-                                            <p class="mb-0 fs-12 text-muted fst-italic ">By registering you agree to the Broker <a href="# " class="text-primary text-decoration-underline fst-normal fw-medium ">Terms
+                                            <p class="mb-0 fs-12 text-muted fst-italic ">By registering you agree to the Broker <a routerLink="# " class="text-primary text-decoration-underline fst-normal fw-medium ">Terms
                                                 of Use</a></p>
                                         </div>
                                     </div>

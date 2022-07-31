@@ -13,6 +13,8 @@ import { UserDataService } from 'src/app/service/user-data.service';
 export class HeaderComponent implements OnInit {
 
   toggle:boolean = true;
+  profile:boolean = true;
+  notif:boolean = true;
   container: any
   UserProfile: any = [];
   notification: any
@@ -42,8 +44,18 @@ export class HeaderComponent implements OnInit {
   }
 
   change(){
-    // console.log('click')
     this.toggle = !this.toggle;
+    // console.log(this.toggle);
+  }
+
+  notifShow(){
+    this.notif = !this.notif;
+    // console.log(this.toggle);
+  }
+
+  profileShow(){
+    this.profile = !this.profile;
+    // console.log(this.toggle);
   }
 
   logData(){
@@ -60,7 +72,7 @@ export class HeaderComponent implements OnInit {
       (data) => {
         localStorage.clear();
         this.toast.show('Logged Out');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
         // console.log(data)
       }
     );

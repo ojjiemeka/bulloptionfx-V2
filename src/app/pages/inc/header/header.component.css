@@ -93,10 +93,31 @@ span {
     font-family: Nunito, sans-serif !important;
 }
 
+h6,p{
+    color: #fff;
+
+}
+
 h6 {
     /* font-variant: diagonal-fractions; */
     font-size: 15px !important;
-    color: #fff;
+}
+
+img {
+    filter: none !important
+}
+
+button:hover,
+img:hover {
+    filter: saturate(0.6) !important;
+}
+
+.cusor{
+    cursor: pointer;
+}
+
+.btn{
+    border: none !important;
 }
 
 .bull-logo-light {
@@ -107,6 +128,13 @@ h6 {
     .bull-logo-light {
         position: relative;
         left: 13.5em;
+    }
+}
+
+@media only screen and (max-width: 428px) {
+    .bull-logo-light {
+        position: relative;
+        left: 4.5em;
     }
 }
 

@@ -7,15 +7,43 @@ h6,
 p,
 span {
     font-family: Nunito, sans-serif !important;
+    color: #fff;
 }
 
 h6 {
     font-size: 15px;
 }
 
+.btn{
+    border: none !important
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #048160;
+    border-color: #16a3fe;
+}
+
+.btn-light:hover, .btn-light:focus {
+    background-color: #415076;
+    border-color: #cce3f4;
+    color: #fff !important;
+}
+
+.bg-secondary {
+    background: var(--secondary-color)!important;
+    /* border-radius: 15px; */
+}
+
 .plans {
     display: flex !important;
     justify-content: space-around !important;
+}
+
+.card {
+    border-color: var(--border-color);
+    background-color: var(--card-color)!important;
+    border-style: dashed;
+    border-radius: 0.75rem;
 }
 
 @media only screen and (max-width: 768px) {

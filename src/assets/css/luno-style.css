@@ -7,9 +7,6 @@
 /*!* Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
 * License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)*/
 
-@import "../../../../../cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css";
-@import "../../../../../cdn.jsdelivr.net/npm/bootstrap-icons%401.5.0/font/bootstrap-icons.css";
-@import "../../../../../cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css";
 @font-face {
     font-family: FontAwesome;
     src: url(../fonts/fontawesome-webfont3e6e.eot?v=4.7.0);
@@ -15412,7 +15409,7 @@ textarea.form-control-lg {
     -moz-appearance: none;
     appearance: none;
     -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+    print-color-adjust: exact;
 }
 
 .form-check-input[type="checkbox"] {
@@ -16866,7 +16863,7 @@ fieldset:disabled .btn {
 }
 
 .dropdown-menu-end {
-    --bs-position: end;
+    --bs-position:flex-end;
 }
 
 .dropdown-menu-end[data-bs-popper] {
@@ -16883,7 +16880,7 @@ fieldset:disabled .btn {
         left: 0;
     }
     .dropdown-menu-sm-end {
-        --bs-position: end;
+        --bs-position:flex-end;
     }
     .dropdown-menu-sm-end[data-bs-popper] {
         right: 0;
@@ -16900,7 +16897,7 @@ fieldset:disabled .btn {
         left: 0;
     }
     .dropdown-menu-md-end {
-        --bs-position: end;
+        --bs-position:flex-end;
     }
     .dropdown-menu-md-end[data-bs-popper] {
         right: 0;
@@ -16917,7 +16914,7 @@ fieldset:disabled .btn {
         left: 0;
     }
     .dropdown-menu-lg-end {
-        --bs-position: end;
+        --bs-position:flex-end;
     }
     .dropdown-menu-lg-end[data-bs-popper] {
         right: 0;
@@ -16934,7 +16931,7 @@ fieldset:disabled .btn {
         left: 0;
     }
     .dropdown-menu-xl-end {
-        --bs-position: end;
+        --bs-position:flex-end;
     }
     .dropdown-menu-xl-end[data-bs-popper] {
         right: 0;
@@ -16951,7 +16948,7 @@ fieldset:disabled .btn {
         left: 0;
     }
     .dropdown-menu-xxl-end {
-        --bs-position: end;
+        --bs-position:flex-end;
     }
     .dropdown-menu-xxl-end[data-bs-popper] {
         right: 0;
@@ -18199,7 +18196,7 @@ fieldset:disabled .btn {
 }
 
 .breadcrumb-item.active {
-    color: #6c757d;
+    color: #d9e2eb;
 }
 
 .pagination {
@@ -18507,16 +18504,18 @@ fieldset:disabled .btn {
 
 .list-group-item-action {
     width: 100%;
-    color: #495057;
+    /* color: #495057; */
+    color: var(--color-500);
     text-align: inherit;
 }
 
 .list-group-item-action:focus,
 .list-group-item-action:hover {
     z-index: 1;
-    color: #495057;
+    /* color: #495057; */
+    color: #5b6166;
     text-decoration: none;
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
 }
 
 .list-group-item-action:active {
@@ -24422,17 +24421,6 @@ img:hover {
     }
 }
 
-.fancybox-overlay {
-    background-image: url(../vendor/fancybox/source/fancybox_overlay.png);
-}
-
-#fancybox-loading,
-.fancybox-close,
-.fancybox-next span,
-.fancybox-prev span {
-    background-image: url(../vendor/fancybox/source/fancybox_sprite.png);
-}
-
 code {
     font-size: 14px;
 }
@@ -26328,7 +26316,7 @@ button:focus:not(:focus-visible) {
     background: var(--color-900) !important;
 }
 
-.bg-light {
+.bg-light-header {
     background: var(--body-color) !important;
 }
 
@@ -27987,7 +27975,7 @@ button:focus:not(:focus-visible) {
 .wrapper .page-body.auth::after {
     position: absolute;
     content: "";
-    background-image: url(../img/auth.png);
+    /* background-image: url(../img/auth.png); */
     width: 100%;
     height: 100%;
     top: 0;
@@ -28646,7 +28634,7 @@ button:focus:not(:focus-visible) {
 
 .layout-1 .body-layout-1 .order-2 .list-group li .hover-actions {
     position: absolute;
-    text-align: end;
+    text-align:flex-end;
     display: none;
     width: 135px;
     right: 0;
@@ -29746,7 +29734,7 @@ button:focus:not(:focus-visible) {
 
 .layout-2 .body-layout-1 .order-2 .list-group li .hover-actions {
     position: absolute;
-    text-align: end;
+    text-align:flex-end;
     display: none;
     width: 135px;
     right: 0;
@@ -30326,7 +30314,7 @@ button:focus:not(:focus-visible) {
 
 .inbox .order-2 .list-group li .hover-actions {
     position: absolute;
-    text-align: end;
+    text-align:flex-end;
     display: none;
     width: 135px;
     right: 0;
@@ -31015,11 +31003,6 @@ button:focus:not(:focus-visible) {
     font-size: 20px;
 }
 
-@font-face {
-    font-family: summernote;
-    src: url(../fonts/summernote.eot);
-    src: url(../fonts/summernote.eot?#iefix) format("embedded-opentype"), url(../fonts/summernote.woff2) format("woff2"), url(../fonts/summernote.woff) format("woff"), url(../fonts/summernote.ttf) format("truetype");
-}
 
 .note-editor.note-airframe,
 .note-editor.note-frame {
@@ -31241,7 +31224,7 @@ button:focus:not(:focus-visible) {
     top: 50%;
     margin-left: -40px;
     margin-top: -40px;
-    background: url(owl.video.play.png) no-repeat;
+    /* background: url(owl.video.play.png) no-repeat; */
     cursor: pointer;
     z-index: 1;
     -webkit-backface-visibility: hidden;
@@ -32194,7 +32177,7 @@ button:focus:not(:focus-visible) {
 }
 
 .jsgrid .jsgrid-button {
-    background-image: url(../vendor/jsgrid/icons.png);
+    /* background-image: url(../vendor/jsgrid/icons.png); */
     border: none;
     cursor: pointer;
     background-repeat: no-repeat;
@@ -32875,7 +32858,7 @@ button:focus:not(:focus-visible) {
 
 .card {
     border-color: var(--border-color);
-    background-color: var(--card-color);
+    background-color: var(--card-color) !important;
     border-style: dashed;
     border-radius: 0.75rem;
 }
@@ -33978,7 +33961,7 @@ table.dataTable.dtr-inline.collapsed.d-row>tbody>tr[role="row"]>th:first-child::
 }
 
 .landing-page .section.call-action {
-    background-image: url(../img/auth.jpg);
+    /* background-image: url(../img/auth.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -34262,7 +34245,7 @@ table.dataTable.dtr-inline.collapsed.d-row>tbody>tr[role="row"]>th:first-child::
 }
 
 .landing-page .section.about .video-box {
-    background: url(../img/hospital/about.jpg) center center no-repeat;
+    /* background: url(../img/hospital/about.jpg) center center no-repeat; */
     background-size: cover;
     min-height: 480px;
 }
