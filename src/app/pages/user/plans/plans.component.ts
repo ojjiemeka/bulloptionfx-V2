@@ -17,7 +17,7 @@ export class PlansComponent implements OnInit {
   public executiveForm!: FormGroup
   public depositForm!: FormGroup
   public withdrawalForm!: FormGroup
-  UserProfile: any = null;
+  UserProfile: any = [];
   message: any
 
   constructor(
@@ -53,7 +53,7 @@ export class PlansComponent implements OnInit {
     this.basicForm = this.formBuilder.group({
       amount: ['500']
     })
-    console.log(this.basicForm.value);
+    // console.log(this.basicForm.value);
   }
 
   basicPlan(){
@@ -75,7 +75,7 @@ export class PlansComponent implements OnInit {
     this.premiumForm = this.formBuilder.group({
       amount: ['2250']
     })
-    console.log(this.premiumForm.value);
+    // console.log(this.premiumForm.value);
   }
 
   premiumPlan(){
@@ -97,7 +97,7 @@ export class PlansComponent implements OnInit {
     this.executiveForm = this.formBuilder.group({
       amount: ['8000']
     })
-    console.log(this.executiveForm.value);
+    // console.log(this.executiveForm.value);
   }
 
   executivePlan(){

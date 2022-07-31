@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   toggle:boolean = true;
   container: any
-  UserProfile: any = null;
+  UserProfile: any = [];
   notification: any
 
   
@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
     this.getUserData();
     this.logData();
   }
+  
 
   getUserData(){
     this.authService.getUser().subscribe(user =>{
@@ -41,7 +42,7 @@ export class HeaderComponent implements OnInit {
   }
 
   change(){
-    console.log('click')
+    // console.log('click')
     this.toggle = !this.toggle;
   }
 

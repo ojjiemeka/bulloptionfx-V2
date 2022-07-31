@@ -12,16 +12,17 @@ export class AuthService {
     private token: TokenService
   ) { }
 
-  $base_URL = "http://127.0.0.1:8000/api";
+  // $base_URL = "http://127.0.0.1:8000/api";
+  $base_URL = "https://api.bull-option.com/api";
 
   accessToken: any = this.token.getToken();
 
   signup( data: any ){
-    return this.http.post<any>(this.$base_URL +'/register/', data);
+    return this.http.post<any>(this.$base_URL +'/register', data);
   }
 
   login( data:any){
-    return this.http.post<any>(this.$base_URL +'/login/', data);
+    return this.http.post<any>(this.$base_URL +'/login', data);
   }
 
   /**
@@ -41,7 +42,7 @@ export class AuthService {
           'Authorization': 'Bearer ' + this.accessToken
         })
       };
-    return this.http.get<any>(this.$base_URL +'/home/', httpOptions);
+    return this.http.get<any>(this.$base_URL +'/home', httpOptions);
   }
 
   updateUser(id: any, body: any){

@@ -8,17 +8,13 @@ import { UserDataService } from 'src/app/service/user-data.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  
+  UserProfile: any = [];
 
   constructor(
     private userDataService: UserDataService,
     private authService: AuthService,
-
-
-
   ) { }
-
-  UserProfile: any = null;
-
 
   ngOnInit(): void {
     this.getUserData();

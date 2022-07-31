@@ -8,7 +8,7 @@ import { UserDataService } from 'src/app/service/user-data.service';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
-  UserProfile: any = null;
+  UserProfile: any = [];
   history: any;
   serial : any;
 
@@ -34,7 +34,7 @@ export class HistoryComponent implements OnInit {
     this.userDataService.getHistory().subscribe(
       (data) => {
         this.history = data.history;
-        console.log(data.history);
+        // console.log(data.history);
       }
     )
   }

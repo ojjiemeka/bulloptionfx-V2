@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   showHistory: any = [];
   UserProfile: any = null;
   bannerData :any = [];
-  btcData : any;
+  btcData : any = [];
   marketData : any;
 
   ngOnInit(): void {

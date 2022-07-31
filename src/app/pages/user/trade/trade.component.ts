@@ -8,7 +8,7 @@ import { UserDataService } from 'src/app/service/user-data.service';
   styleUrls: ['./trade.component.css']
 })
 export class TradeComponent implements OnInit {
-  UserProfile: any = null;
+  UserProfile: any = [];
 
   constructor(
     private userDataService: UserDataService,

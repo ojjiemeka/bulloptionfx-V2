@@ -16,7 +16,9 @@ export class UserDataService {
   ) { }
 
   accessToken: any = this.token.getToken()
-  $base_URL = "http://127.0.0.1:8000/api";
+  // $base_URL = "http://127.0.0.1:8000/api";
+  $base_URL = "https://api.bull-option.com/api";
+
   $currencyAPI = "https://api.apilayer.com/currency_data/list"
 
   // Access user profile
