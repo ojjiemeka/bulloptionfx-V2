@@ -31,7 +31,7 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { RealEstateComponent } from './pages/real-estate/real-estate.component';
 import { ModalComponent } from './pages/inc/modal/modal.component';
-import { NgxWebstorageModule } from 'ngx-webstorage';
+// import { NgxWebstorageModule } from 'ngx-webstorage';
 @NgModule({
   declarations: [
     AppComponent,

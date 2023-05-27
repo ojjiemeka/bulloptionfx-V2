@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { AuthService } from 'src/app/service/auth.service';
-
+import { NgForm,Validators } from '@angular/forms';
+import { LoginComponent } from '../login/login.component';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,12 +12,12 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  public signupForm!: FormGroup
+  // public signupForm!: FormGroup
   submitted = false;
   error: any;
+  passwordVisible = false;
 
   constructor(
-    private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
     private authService: AuthService,
@@ -26,77 +26,59 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.form();
+    // this.form();
   }
 
-  form(){
-    this.signupForm = this.formBuilder.group({
-      fname: ['', Validators.required],
-      lname: ['', Validators.required],
-      phonenumber: ['', Validators.required],
-      nationality: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      dob: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      password_confirmation: ['', [Validators.required]],
-      acceptTerms: [false, Validators.required]
-    },
-    {
-      // validators: this.passwordMatchValidator('password',this.signupForm.value['password'])
-      validator: this.ConfirmedValidator('password', 'password_confirmation'),
-    }
-    )
+  // signup(form: NgForm){
+
+  //   this.submitted = true;
+
+  //   if (!form.valid) {
+  //     this.error = "Please make sure all fields are properly filled";
+  //     return this.error;
+  //   }else{
+  //     this.authService.signup(form.value).subscribe(res => {  
+  //       // alert("Account Creation Successful");
+  //       this.toast.success('Account Creation Successful');
+  //       form.reset(); //reset the form
+  //       this.router.navigate(['/login'])
+  //     },err =>{
+  //       alert('Something went Wrong')
+  //       console.log(err);
+  //     })
+  //     // console.log(this.signupForm.value);
+  //   }
+  //   // console.log(this.signupForm.value);
+  //   // this.signupForm.reset();
+  // }
+
+  togglePasswordVisibility(password: any) {
+    this.passwordVisible = !this.passwordVisible;
+    password.type = this.passwordVisible ? 'text' : 'password';
   }
 
-  /**
-   * It returns the controls of the loginForm
-   * @returns The form controls.
-   */
-   get f() {
-    return this.signupForm.controls;
-  }
-
- ConfirmedValidator(controlName: string, matchingControlName: string) {
-  return (formGroup: FormGroup) => {
-    const control = formGroup.controls[controlName];
-    const matchingControl = formGroup.controls[matchingControlName];
-    if (
-      matchingControl.errors &&
-      !matchingControl.errors['confirmedValidator']
-    ) {
+  signup(form: NgForm) {
+    this.submitted = true;
+    // console.warn(form.value);
+    if (!form.valid) {
       return;
     }
-    if (control.value !== matchingControl.value) {
-      matchingControl.setErrors({ confirmedValidator: true });
+  
+    if (form.valid) {
+      this.authService.signup(form.value).subscribe({
+        next: () => {
+          this.toast.success('Account Creation Successful, Check Email foor Login Details');
+          form.reset();
+          // this.router.navigate(['/login']);
+        },
+        error: (err) => {
+          console.error(err);
+          this.toast.error('Something went wrong');
+        }
+      });
     } else {
-      matchingControl.setErrors(null);
-    }
-  };
-}
-
-  signup(){
-
-    this.submitted = true;
-
-    if (this.signupForm.invalid) {
-      this.error = "Please make sure all fields are properly filled";
+      this.error = 'Please make sure all fields are properly filled';
       return this.error;
-      // console.log(this.error);
-    }else{
-      this.authService.signup(this.signupForm.value).subscribe(res => {  
-        // alert("Account Creation Successful");
-        this.toast.success('Account Creation Successful');
-        this.signupForm.reset(); //reset the form
-        this.router.navigate(['/login'])
-      },err =>{
-        alert('Something went Wrong')
-        console.log(err);
-      })
-      // console.log(this.signupForm.value);
     }
-    // console.log(this.signupForm.value);
-    // this.signupForm.reset();
   }
-
-
 }

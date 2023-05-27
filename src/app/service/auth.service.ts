@@ -12,8 +12,8 @@ export class AuthService {
     private token: TokenService
   ) { }
 
-  // $base_URL = "http://127.0.0.1:8000/api";
-  $base_URL = "https://api.bull-option.com/api";
+  $base_URL = "http://127.0.0.1:8000/api";
+  // $base_URL = "https://api.bulloptionfx.com/api";
 
   accessToken: any = this.token.getToken();
 

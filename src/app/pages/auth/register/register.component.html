@@ -37,38 +37,42 @@
                                     <p class="text-primary">Already have an account ? <a routerLink="/login" class="fw-semibold link-text fw-bolder">&nbsp; &nbsp;  Signin </a> </p>
                                 </div>
 
-                                <div class="mt-2 row" *ngIf="signupForm.invalid">
+                                <!-- <div class="mt-2 row" *ngIf="form.invalid">
                                     <h6 class="text-danger font-weight-bold">{{error}} </h6>
-                                </div>
+                                </div> -->
 
-                                <form [formGroup]="signupForm" (ngSubmit)="signup()">
+                                <form #signupForm="ngForm" (ngSubmit)="signup(signupForm)">
 
                                     <div class="row">
 
                                         <label class="col-md-12 col-sm-6 col-form-label">Full Name *</label>
 
                                         <div class="col-md-6 col-sm-6">
-                                            <input class="form-control" type="text" placeholder="Enter First Name" formControlName="fname" autocomplete="off" [ngClass]="{ 'is-invalid': f['fname'].errors }" />
-                                            <div class="invalid-feedback">
-
-                                                <!-- <div *ngIf="f['fname'].touched">
-                                                    Enter First Name
-                                                </div> -->
-                                                <div *ngIf="f['fname'].errors?.['required']">
-                                                    Enter First Name
-                                                </div>
+                                            <input class="form-control"
+                                                    type="text" 
+                                                    placeholder="Enter First Name" 
+                                                    autocomplete="off"
+                                                    name="fname"
+                                                    #fname="ngModel"
+                                                    ngModel
+                                                    required
+                                                    />
+                                            <div *ngIf="fname.invalid && fname.touched" class="invalid-feedback">
+                                                <div>Please enter Firstname</div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <input class="form-control" type="text" placeholder="Enter Last Name" formControlName="lname" autocomplete="off" [ngClass]="{ 'is-invalid':f['lname'].errors }" />
-                                            <div class="invalid-feedback">
-
-                                                <!-- <div *ngIf="f['lname'].touched">
-                                                    Please enter Last Name
-                                                </div> -->
-                                                <div *ngIf="f['lname'].errors?.['required']">
-                                                    Please enter Last Name
-                                                </div>
+                                            <input class="form-control" 
+                                                    type="text" 
+                                                    placeholder="Enter Last Name"
+                                                    autocomplete="off" 
+                                                    name="lname"
+                                                    #lname="ngModel"
+                                                    ngModel
+                                                    required
+                                                    />
+                                            <div *ngIf="lname.invalid && lname.touched" class="invalid-feedback">
+                                                <div>Please enter Lastname</div>
                                             </div>
                                         </div>
 
@@ -76,23 +80,33 @@
                                         <div class="col-md-6 mt-4">
                                             <div class="">
                                                 <label class="form-label fw-bolder  fs-6">Phonenumber</label>
-                                                <input class="form-control" type="number" placeholder="Enter Phone Number" formControlName="phonenumber" autocomplete="off" [ngClass]="{ 'is-invalid': f['phonenumber'].errors}" />
-                                                <div class="invalid-feedback">
-                                                    <!-- <div *ngIf="f['phonenumber'].touched">
-                                                        Please enter Phonenumber
-                                                    </div> -->
-                                                    <div *ngIf="f['phonenumber'].errors?.['required']">
-                                                        Please enter Phonenumber
-                                                    </div>
+                                                <input class="form-control" 
+                                                        type="number" 
+                                                        placeholder="Enter Phone Number"
+                                                        autocomplete="off" 
+                                                        name="phonenumber"
+                                                        #phonenumber="ngModel"
+                                                        required
+                                                        ngModel/>
+                                                        
+                                                <div *ngIf="phonenumber.invalid && phonenumber.touched" class="invalid-feedback">
+                                                    <div>Please enter Phonenumber</div>
                                                 </div>
                                             </div>
                                         </div>
+                            
 
                                         <div class="col-md-6 mt-4">
                                             <div class="">
                                                 <label class="form-label fw-bolder  fs-6">Nationality</label>
                                                 <div class="input-group">
-                                                    <select class="custom-select form-control" formControlName="nationality" id="inputGroupSelect01" [ngClass]="{ 'is-invalid': f['nationality'].errors}">
+                                                    <select class="custom-select form-control" 
+                                                            id="inputGroupSelect01"
+                                                            name="nationality"
+                                                            #nationality="ngModel"
+                                                            ngModel
+                                                            required
+                                                            >
                                                         <option selected>Select your country</option>
                                                         <option value="Andorra">Andorra</option>
                                                         <option value="United Arab Emirates">United Arab Emirates</option>
@@ -347,13 +361,8 @@
                                                         <option value="Zimbabwe">Zimbabwe</option>
                                                       </select>
                                                     <span class="input-group-text"><i class='bx bx-chevron-down text-light' ></i></span>
-                                                    <div class="invalid-feedback">
-                                                        <!-- <div *ngIf="f['nationality'].touched">
-                                                            Please select a Country
-                                                        </div> -->
-                                                        <div *ngIf="f['nationality'].errors?.['required']">
-                                                            Please select a Country
-                                                        </div>
+                                                    <div *ngIf="nationality.invalid && nationality.touched" class="invalid-feedback">
+                                                        <div>Please enter nationality</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -361,78 +370,94 @@
 
                                         <div class="col-md-6 mt-4">
                                             <label class="form-label fw-bolder  fs-6">Email</label>
-                                            <input class="form-control" type="email" placeholder="Enter Email" formControlName="email" autocomplete="on" [ngClass]="{ 'is-invalid': f['email'].errors}" />
-                                            <div class="invalid-feedback">
-                                                <!-- <div *ngIf="f['email'].touched">
-                                                    Please enter Email
-                                                </div> -->
-                                                <div *ngIf="f['email'].errors?.['required']">
-                                                    Please enter Email
-                                                </div>
+                                            <input class="form-control" 
+                                                    type="email" 
+                                                    placeholder="Enter Email" 
+                                                    autocomplete="on"
+                                                    name="email"
+                                                    #email="ngModel"
+                                                    ngModel
+                                                    required
+                                            />
+                                            <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
+                                                <div>Please enter email</div>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6 mt-4">
                                             <label class="form-label fw-bolder  fs-6">Date of Birth</label>
                                             <div class="input-group" id="datepicker1">
-                                                <input type="date" class="form-control" placeholder="dd-mm-yyyy" formControlName="dob" autofocus [ngClass]="{ 'is-invalid': f['dob'].errors}">
-                                                <div class="invalid-feedback">
-                                                    <!-- <div *ngIf="f['dob'].touched">
-                                                        Please enter Date of Birth
-                                                    </div> -->
-                                                    <div *ngIf="f['dob'].errors?.['required']">
-                                                        Please enter Date of Birth
-                                                    </div>
-                                                </div>
+                                                <input type="date" 
+                                                        class="form-control" 
+                                                        placeholder="dd-mm-yyyy" 
+                                                        autofocus 
+                                                        name="dob"
+                                                        #dob="ngModel"
+                                                        ngModel
+                                                        required
+                                                        >
                                             </div>
                                         </div>
 
                                         <div class="col-md-6 mt-4">
                                             <div class=" fv-row" data-kt-password-meter="true">
-                                                <div class="">
                                                     <label class="form-label fw-bolder  fs-6">Password</label>
-                                                    <div class="position-relative mb-3">
-                                                        <input class="form-control" type="password" placeholder="Enter Password" formControlName="password" autocomplete="off" [ngClass]="{ 'is-invalid': submitted || f['password'].errors}" />
-                                                        <!-- <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-                                                            <i class="bi bi-eye-slash fs-2"></i>
-                                                            <i class="bi bi-eye fs-2 d-none"></i>
-                                                        </span> -->
-                                                        <div class="invalid-feedback">
-                                                            <!-- <div *ngIf="f['password'].errors?.['required']">Password does not match</div> -->
-                                                            <!-- <div *ngIf=" f['password'].touched">Password is required</div> -->
-                                                            <div *ngIf="f['password'].errors?.['minlength']">
-                                                                Password must be at least 6 characters
-                                                            </div>
-                                                        </div>
+                                                    <div class="position-relative mb-3 psw form-control">
+                                                        <input class="" 
+                                                                type="{{ passwordVisible ? 'text' : 'password' }}"  
+                                                                placeholder="Enter Password" 
+                                                                autocomplete="off" 
+                                                                name="password"
+                                                                #password="ngModel"
+                                                                ngModel
+                                                                required
+                                                                minlength="6"
+                                                                maxlength="10"
+                                                                pattern='^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$'
+                                                                id="psw-input"
+                                                                />
+                                                                <button class="submitBtn" type="button" (click)="togglePasswordVisibility(password)">
+                                                                    <i [class]="'bx ' + (passwordVisible ? 'bx-show' : 'bx-hide')"></i>
+                                                                  </button>
+                                                    </div>
+                                                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback">
+                                                        <div class="mb-1" *ngIf="password.errors?.['required']">Password is required.</div>
+                                                        <div class="mb-1" *ngIf="password.errors?.['minlength']">Password should not be less than 6 characters.</div>
+                                                        <div class="mb-1" *ngIf="password.errors?.['maxlength']">Password should not exceed 10 characters.</div>
+                                                        <div class="mb-1" *ngIf="password.errors?.['pattern']">Password must contain letters, numbers, and a capital letter.</div>
                                                     </div>
                                                 </div>
                                                 <!-- <div class="text-muted">Use 8 or more characters with a mix of letters, numbers &amp; symbols.</div> -->
-
-                                            </div>
                                         </div>
 
                                         <div class="col-md-6 mt-4">
                                             <div class="fv-row">
                                                 <label class="form-label fw-bolder  fs-6">Confirm Password</label>
-                                                <input class="form-control" type="password" placeholder="Confirm Password" formControlName="password_confirmation" autocomplete="off" [ngClass]="{ 'is-invalid': submitted || f['password_confirmation'].errors }" />
-                                                <div class="invalid-feedback">
-                                                    <div *ngIf="f['password_confirmation'].errors?.['required']">
-                                                        Password is required
-                                                    </div>
-                                                    <div *ngIf="f['password_confirmation'].errors?.['confirmedValidator']">
-                                                        Password does not match
-                                                    </div>
+                                                <input class="position-relative mb-3 psw form-control" 
+                                                        type="{{ passwordVisible ? 'text' : 'password' }}"  
+                                                        placeholder="Confirm Password" 
+                                                        autocomplete="off"
+                                                        name="password_confirmation"
+                                                        #password_confirmation="ngModel"
+                                                        ngModel
+                                                        required
+                                                        minlength="6"
+                                                        maxlength="10"
+                                                        pattern='^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$'
+                                                        id="psw-input1"
+                                                        />
+                                                <div *ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched)" class="invalid-feedback">
+                                                    <div *ngIf="password_confirmation.errors?.['required']">Password is required.</div>
+                                                    <div *ngIf="password_confirmation !== password">Passwords do not match.</div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
 
                                     <div class=" text-center mt-4 ">
                                         <div class="fv-row ">
                                             <label class="form-check form-check-custom form-check-solid form-check-inline ">
                                             <input class="form-check-input " type="checkbox " formControlName="toc " value="1 " />
-                                            <input type="checkbox " formControlName="acceptTerms " class="form-check-input " [ngClass]="{ 'is-invalid': submitted && f[ 'acceptTerms'].errors } "/>
+                                            <input type="checkbox " formControlName="acceptTerms " class="form-check-input"/>
                                             <span class="form-check-label fw-bold text-gray-700 fs-6 ">I Agree
                                                 <a routerLink="# " class="ms-1 link-primary ">Terms and conditions</a>.</span>
                                         </label>
@@ -447,7 +472,12 @@
 
 
                                     <div class="mt-4 text-center ">
-                                        <button class="btn btn-primary btn-lg w-50 rounded-btn " type="submit ">Sign Up</button>
+                                        <button class="btn btn-primary btn-lg w-50 rounded-btn" 
+                                                type="submit"
+                                                [disabled]="signupForm.invalid"
+                                                >Sign Up
+                                        </button>
+                                    </div>
                                     </div>
                                 </form>
 

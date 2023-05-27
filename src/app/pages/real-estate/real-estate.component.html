@@ -1,0 +1,198 @@
+<div class="nk-body body-wider theme-dark mode-onepage">
+    <div class="nk-wrap">
+        <header class="nk-header page-header is-transparent is-sticky is-shrink is-dark has-fixed" id="header" (scroll)="onScroll($event)" [ngClass]="scroll? 'has-fixed' : '' ">
+            <!-- Header @s  -->
+            <div class="header-main">
+                <div class="header-container container">
+                    <div class="header-wrap">
+                        <!-- Logo @s  -->
+                        <div class="header-logo logo animated" data-animate="fadeInDown" data-delay=".65">
+                            <a routerLink="/" class="logo-link">
+                                <div>
+                                    <img src="../../../../assets/images/Bull-logo-dark.png" alt="" class="bull-logo-dark" srcset="">
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Menu Toogle @s  -->
+                        <div class="header-nav-toggle">
+                            <button routerLink="#" class="navbar-toggle cus-btn toggle-btn" [ngClass]="sidebar? 'navbar-active' : '' " (click)="sidebar=!sidebar">
+                                <div class="toggle-line">
+                                    <span></span>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Menu @s  -->
+
+
+                        <!-- sidebar -->
+                        <div class="header-navbar header-navbar-s1 menu-mobile " [ngClass]="sidebar? 'menu-shown' : '' ">
+                            <nav class="header-menu" id="header-menu">
+                                <ul class="menu animated remove-animation" data-animate="fadeInDown" data-delay=".75">
+                                    <li class="menu-item"><a class="menu-link nav-link" href="#about" [ngClass]="sidebar? 'cus-link' : '' ">About</a></li>
+                                    <li class="menu-item"><a class="menu-link nav-link" href="#why" [ngClass]="sidebar? 'cus-link' : '' ">Why</a></li>
+                                    <li class="menu-item"><a class="menu-link nav-link" href="#benifits" [ngClass]="sidebar? 'cus-link' : '' ">Benifits</a></li>
+
+
+
+                                    <li class="menu-item"><a class="menu-link nav-link" href="#faqs" [ngClass]="sidebar? 'cus-link' : '' ">Faqs</a></li>
+                                    <li class="menu-item"><a class="menu-link nav-link" href="#contact" [ngClass]="sidebar? 'cus-link' : '' ">Contact</a></li>
+                                    <li class="menu-item"><a class="menu-link nav-link" routerLink="/realestate" [ngClass]="sidebar? 'cus-link' : '' ">Real Estate</a></li>
+                                </ul>
+                                <ul class="menu-btns menu-btns-s2 align-items-center animated remove-animation" data-animate="fadeInDown" data-delay=".85">
+
+                                    <li><a routerLink="/login" class="btn btn-md btn-grad btn-grad-alt no-change"><span>Login</span></a></li>
+                                </ul>
+                            </nav>
+                            <div class="header-navbar-overlay"></div>
+                        </div>
+                        <!-- .header-navbar @e  -->
+                    </div>
+                </div>
+            </div>
+            <!-- .header-main @e  -->
+            <!-- Banner @s  -->
+            <div class="header-banner bg-theme-grad-s2 header-banner-lungwort ov-h tc-light">
+                <div class="background-shape bs-right"></div>
+                <div class="nk-banner">
+                    <div class="banner banner-fs banner-s2">
+                        <div class="banner-wrap">
+                            <div class="container">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-xl-6 col-lg-5 order-lg-last">
+                                        <div class="banner-gfx banner-gfx-re-s2 animated" data-animate="fadeInUp" data-delay="1.25">
+                                            <img src="../../../assets/index/img/landing/lungwort/gfx-b.png" alt="header">
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                    <div class="col-xl-6 col-lg-7 text-center text-lg-left">
+                                        <div class="banner-caption cpn tc-light">
+                                            <div class="cpn-head">
+                                                <h1 class="title title-xl-2 fw-6 animated" data-animate="fadeInUp" data-delay="1.35">World #1 Brokerage Agency</h1>
+                                            </div>
+                                            <div class="cpn-text">
+                                                <p class="lead animated" data-animate="fadeInUp" data-delay="1.45">Your access to the global financial markets
+                                                    <br> Invest in hundreds of US stocks commission free
+                                                </p>
+                                            </div>
+                                            <div class="token-status token-status-s2 animated" data-animate="fadeInUp" data-delay="1.65">
+                                                <div class="token-box token-box-s2 round">
+                                                    <h5 class="title title-xs-alt fw-6">20% bonus on first deposit</h5>
+                                                    <div class="countdown-s3 countdown-s4 countdown" data-date="2023/04/22"></div>
+                                                </div>
+                                                <div class="token-action token-action-s1">
+                                                    <a class="btn btn-md btn-grad" routerLink="/login">Sign UP now!!!</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- .col -->
+                                </div>
+                                <!-- .row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .nk-banner -->
+                <!-- Place Particle Js -->
+                <div id="particles-bg" class="particles-container particles-bg" data-pt-base="#00c0fa" data-pt-base-op=".3" data-pt-line="#2b56f5" data-pt-line-op=".5" data-pt-shape="#00c0fa" data-pt-shape-op=".2"></div>
+            </div>
+            <!-- .header-banner @e  -->
+        </header>
+        
+        <main class="nk-pages mb-2">
+            <section class="section section-r bg-white tc-light pb-0 ov-h">
+                <div class="container">
+                    <div class="section-head section-head-sm wide-auto-sm text-center">
+                        <h2 class="title title-xs title-xs-s1 tc-dark animated" data-animate="fadeInUp" data-delay=".1">Our Rating</h2>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-lg-12">
+                            <div class="nk-block">
+                                <div class="row gutter-vr-30px text-center">
+                                    
+                                    <div class="col-md col-8">
+                                        <img src="https://photos.zillowstatic.com/fp/8b3d449066de8b4ae53c188da1b5388d-cc_ft_1536.webp" alt="" srcset="">
+                                    </div>
+                                    <div class="col-md col-4">
+                                        <div class="text-black"><span data-testid="price"class=""><span>$242,000</span></span><div class="hdp__sc-1s2b8ok-2 YhixL"><span data-testid="bed-bath-beyond"><span data-testid="bed-bath-item" class="Text-c11n-8-84-0__sc-aiai24-0 fsXIkY"><strong>2</strong><span> bd</span></span><span class="dpf__sc-13frln-0 erIJut"></span><span data-testid="bed-bath-item" class="Text-c11n-8-84-0__sc-aiai24-0 fsXIkY"><strong>1</strong><span> ba</span></span><span class="dpf__sc-13frln-0 erIJut"></span><span data-testid="bed-bath-item" class="Text-c11n-8-84-0__sc-aiai24-0 fsXIkY"><strong>928</strong><span> sqft</span></span></span></div></div>
+                                    </div>
+                                    <!-- .col -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .col -->
+                    </div>
+                    <!-- .row -->
+                </div>
+            </section>
+
+            
+        </main>
+        <!-- Footer -->
+        <footer class="nk-footer bg-theme-dark">
+            <div class="tc-light">
+                <div class="container">
+                    <!-- Block @s  -->
+                    <div class="nk-block">
+                        <div class="bg-theme-accent-alt round subscribe-wrap animated" data-animate="fadeInUp" data-delay=".1">
+                            <div class="row text-center text-md-left justify-content-center align-items-center gutter-vr-25px">
+                                <div class="col-lg-6">
+                                    <div class="wide-auto-sm">
+                                        <h4 class="title-sm">Don't miss out, Stay updated</h4>
+                                        <p>Sign up for updates and market news. Subscribe to our newsletter and receive updates and tips</p>
+                                    </div>
+                                </div>
+                                <!-- .col -->
+                                <div class="col-lg-6 mt-2">
+                                    <div class="gap-3x d-none d-lg-block"></div>
+                                    <form action="form/subscribe.php" class="nk-form-submit" method="post">
+                                        <div class="field-inline field-inline-s2 field-inline-s2-sm bg-white shadow-soft">
+                                            <div class="field-wrap">
+                                                <input class="input-solid input-solid-md required email" type="text" name="contact-email" placeholder="Enter your email">
+                                                <input type="text" class="d-none" name="form-anti-honeypot" value="">
+                                            </div>
+                                            <div class="submit-wrap">
+                                                <button class="btn btn-md btn-grad">Subscribe</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-results"></div>
+                                    </form>
+                                </div>
+                                <!-- .col -->
+                            </div>
+                            <!-- .row -->
+                        </div>
+                    </div>
+                    <!-- .block @e  -->
+                </div>
+                <!-- .nk-ovm -->
+            </div>
+            <div class="section section-footer section-m tc-light bg-transparent ov-h">
+                <div class="container">
+                    <!-- Block @s  -->
+                    <div class="nk-block block-footer">
+                        <div class="row">
+                            <div class="col">
+                                <div class="wgs wgs-text text-center mb-3">
+                                    <a routerLink="/" class="footer-logo mt-n5">
+                                        <div>
+                                            <img src="../../../../assets/images/Bull-logo-light.png" alt="" class="bull-logo-footer" srcset="">
+                                        </div>
+                                    </a>
+                                    <div class="copyright-text copyright-text-s3 pdt-m">
+                                        <p><span class="d-sm-block">Copyright &copy; {{year}}, Bull-Options FX. </span>All trademarks and copyrights belong to Bull-Options FX.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                        </div>
+                        <!-- .row -->
+                    </div>
+                    <!-- .block @e  -->
+                </div>
+            </div>
+        </footer>
+
+        <!-- Preloader -->
+        <!-- <div class="preloader"><span class="spinner spinner-round"></span></div> -->
+    </div>

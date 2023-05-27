@@ -1,3 +1,5 @@
+/* @import 'boxicons/css/boxicons.min.css'; */
+
 .form-control {
     font-weight: 600;
     color: #212529 !important;
@@ -27,4 +29,22 @@ p,
 span {
     font-family: Nunito, sans-serif !important;
     font-size: 15px !important;
+}
+
+.psw{
+    display: flex;
+    justify-content: space-between;
+}
+
+#psw-input, #psw-input1 {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.submitBtn{
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 15px;
 }
