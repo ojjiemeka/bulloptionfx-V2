@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,9 @@ import { PasswordResetComponent } from './pages/auth/password-reset/password-res
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
 import {ClipboardModule} from '@angular/cdk/clipboard';
+import { RealEstateComponent } from './pages/real-estate/real-estate.component';
+import { ModalComponent } from './pages/inc/modal/modal.component';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +54,9 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
     SupportComponent,
     PasswordResetComponent,
     ForgotPasswordComponent,
-    DateAgoPipe
+    DateAgoPipe,
+    RealEstateComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,9 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    ClipboardModule
+    ClipboardModule,
+    FormsModule,
+    
   ],
   providers: [{
    /* A way to intercept all the http requests and responses. */
