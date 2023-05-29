@@ -15,6 +15,8 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { AuthGuard } from './guard/auth.guard';
 import { PasswordResetComponent } from './pages/auth/password-reset/password-reset.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
+import { DataResolverService } from './service/data-resolver.service';
+
 
 const routes: Routes = [
   // { path: '', component: WelcomeComponent },

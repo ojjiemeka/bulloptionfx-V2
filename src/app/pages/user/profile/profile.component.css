@@ -20,6 +20,11 @@
     color: #00c894 !important;
 }
 
+.shield-warning {
+    color: #f6be26 !important;
+    
+}
+
 h5,
 h6 {
     font-size: 1em !important;

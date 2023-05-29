@@ -21,8 +21,11 @@ export class ProfileComponent implements OnInit {
   }
 
   getUserData(){
-    this.UserProfile = (this.userDataService.getLocalUser());
-      console.log(this.UserProfile)  
+    this.authService.getUser().subscribe(
+      user =>{
+      this.UserProfile = user;
+      // console.log(this.UserProfile.user.fname)  
+    });
   }
 
  /**

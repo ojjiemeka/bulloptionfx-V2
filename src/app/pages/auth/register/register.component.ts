@@ -29,29 +29,6 @@ export class RegisterComponent implements OnInit {
     // this.form();
   }
 
-  // signup(form: NgForm){
-
-  //   this.submitted = true;
-
-  //   if (!form.valid) {
-  //     this.error = "Please make sure all fields are properly filled";
-  //     return this.error;
-  //   }else{
-  //     this.authService.signup(form.value).subscribe(res => {  
-  //       // alert("Account Creation Successful");
-  //       this.toast.success('Account Creation Successful');
-  //       form.reset(); //reset the form
-  //       this.router.navigate(['/login'])
-  //     },err =>{
-  //       alert('Something went Wrong')
-  //       console.log(err);
-  //     })
-  //     // console.log(this.signupForm.value);
-  //   }
-  //   // console.log(this.signupForm.value);
-  //   // this.signupForm.reset();
-  // }
-
   togglePasswordVisibility(password: any) {
     this.passwordVisible = !this.passwordVisible;
     password.type = this.passwordVisible ? 'text' : 'password';
@@ -67,9 +44,9 @@ export class RegisterComponent implements OnInit {
     if (form.valid) {
       this.authService.signup(form.value).subscribe({
         next: () => {
-          this.toast.success('Account Creation Successful, Check Email foor Login Details');
+          this.toast.success('Account Creation Successful, Check Email for Login Details');
           form.reset();
-          // this.router.navigate(['/login']);
+          this.router.navigate(['/login']);
         },
         error: (err) => {
           console.error(err);

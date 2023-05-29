@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { TokenService } from 'src/app/service/token.service';
 import { HotToastService } from '@ngneat/hot-toast';
+// import { SessionStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-login',
@@ -24,28 +25,13 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private token: TokenService,
     private toast: HotToastService,
-
+    // private sessionStorageService: SessionStorageService
 
   ) { }
 
   ngOnInit(): void {
     // this.form();
   }
-
-  // form(){
-  //   this.loginForm = this.formBuilder.group({
-  //     email: ['', Validators.required],
-  //     password: ['', Validators.required]
-  //   })
-  // }
-
-  /**
-   * It returns the controls of the loginForm
-   * @returns The form controls.
-   */
-  // get f() {
-  //   return this.loginForm.controls;
-  // }
 
   login(form: NgForm){
     this.submitted = true;
@@ -68,12 +54,12 @@ export class LoginComponent implements OnInit {
           this.toast.success('Login Successful');
           form.reset();
           this.token.handleToken(user.token);
+          this.router.navigate(['dashboard']);
           localStorage.setItem('userInfo', JSON.stringify(user));
           localStorage.setItem('isLoggedIn', JSON.stringify(this.isLoggedIn));
-          this.router.navigate(['dashboard']);
           // return user;
           // console.log(user.token);
-          console.log(user);
+          // console.log(user);
           // return user;
         }
       },

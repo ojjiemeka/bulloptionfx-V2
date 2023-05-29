@@ -26,6 +26,17 @@ export class UserDataService {
     return JSON.parse(localStorage.getItem("userInfo") || '{}')?.user;
   }
 
+  getWalletAddress(){
+    const httpOptions = { 
+      headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.accessToken
+        })
+      };
+  
+      return this.http.get<any>(this.$base_URL +'/getWalletAddress', httpOptions);
+  }
+
   getHistory(){
     const httpOptions = { 
       headers: new HttpHeaders({

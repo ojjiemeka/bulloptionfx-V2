@@ -50,11 +50,12 @@
                             <div class="card ">
                                 <div class="card-header ">
                                     <h6 class="d-flex align-items-center"> <i class='bx bxs-info-circle bx-sm bx-flashing text-info'></i> &nbsp; Payment should be made to the address below</h6>
-                                    <div class=" mt-2 d-flex">
-                                        <input type="text " class="form-control cus-input " value="bc1q67e3fgvhp9rhavjl0m08w08uwuvawkcr3nzdq3" readonly>
-                                        <button (click)="copy()" [cdkCopyToClipboard]="value" class=" btn copy-btn ">
-                                            <i class='bx bx-md bx-copy-alt'></i>
-                                        </button>
+                                    <div class=" aligncenter d-grid mt-2">
+                                        <div *ngFor="let address of addresses" class="mb-4 text-center">
+                                            <label for="type" class="form-label mb-2 ">{{address.type}}</label>
+                                            <input class="form-control cus-input mb-2" type="text" [value]="address.wallet_address" readonly>
+                                            <i (click)="copyText(address.wallet_address)" class='bx bx-copy-alt bx-md'></i>
+                                          </div>
                                     </div>
                                 </div>
                                 <!-- <hr class="text-light "> -->

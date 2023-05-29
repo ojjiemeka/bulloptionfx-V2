@@ -19,37 +19,40 @@
     <div class="page-body px-xl-4 px-sm-2 px-0 py-lg-2 py-1 mt-0 mt-lg-3">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" *ngIf="UserProfile">
                     <div class="">
                         <div class="card-body border-bottom">
                             <div class="d-flex align-items-md-start align-items-center flex-column flex-md-row">
                                 <img src="../assets/img/profile_av.png" alt="" class="rounded-4">
                                 <div class="media-body ms-md-5 m-0 mt-4 mt-md-0 text-md-start text-center">
-                                    <h4 class="fs-4 fw-light mb-1 text-capitalize">{{UserProfile.fname}} {{UserProfile.lname}}
-                                        <a routerLink="/edit-profile/{{UserProfile.id}}" class="fa fa-pencil-square-o fs-5 ms-2" title="Edit Profile"></a>
+                                    <h4 class="fs-4 fw-light mb-1 text-capitalize">{{UserProfile.user.fname}} {{UserProfile.user.lname}}
+                                        <a routerLink="/edit-profile/{{UserProfile.user.id}}" class="fa fa-pencil-square-o fs-5 ms-2" title="Edit Profile"></a>
                                         <!-- <a href="#" class="fa fa-pencil-square-o fs-6 ms-2" data-bs-toggle="offcanvas" data-bs-target="#edit_profile" title="Edit Profile"></a> -->
                                     </h4>
                                     <span class="text-muted">You have full control to manage your own account setting..</span>
                                     <div class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-md-start">
                                         <div class="card py-2 px-3 me-2 mt-2">
                                             <small class="text-muted">Balance</small>
-                                            <div class="fs-5">${{UserProfile.balance}}</div>
+                                            <div class="fs-5">${{UserProfile.user.balance}}</div>
                                         </div>
                                         <div class="card py-2 px-3 me-2 mt-2">
                                             <small class="text-muted">Profit</small>
-                                            <div class="fs-5">{{UserProfile.profit}}</div>
+                                            <div class="fs-5">{{UserProfile.user.profit}}</div>
                                         </div>
                                         <!-- <div class="card py-2 px-3 me-2 mt-2">
                                             <small class="text-muted">Trade</small>
                                             <div class="fs-5">Active</div>
                                         </div> -->
                                         <div class="card py-2 px-3 me-2 mt-2">
-                                            <small class="text-muted"> Status</small>
-                                            <div class="fs-5 shield-danger" *ngIf="UserProfile.bot == '0' ">
-                                                <i class='bx bxs-check-shield bx-sm'></i>
+                                            <small class="text-muted">Miner Status</small>
+                                            <div class="fs-5 shield-danger" *ngIf="UserProfile.user.bot == '0' ">
+                                                <i class='bx bx-cloud-lightning bx-sm'></i>
                                             </div>
-                                            <div class="fs-5 shield-success" *ngIf="UserProfile.verification_status == '1' ">
-                                                <i class='bx bxs-check-shield bx-sm'></i>
+                                            <div class="fs-5 shield-success" *ngIf="UserProfile.user.verification_status == '1' ">
+                                                <i class='bx bx-cloud-lightning bx-sm'></i>
+                                            </div>
+                                            <div class="fs-5 shield-warning" *ngIf="UserProfile.user.verification_status == '2' ">
+                                                <i class='bx bx-cloud-lightning bx-sm'></i>
                                             </div>
                                         </div>
                                     </div>
@@ -81,20 +84,20 @@
                                                 <a class="text-info">&nbsp; Click here</a>
                                             </p>
                                             <ul class="list-unstyled mb-0">
-                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Full Name:</span>{{UserProfile.fname}} {{UserProfile.lname}}
+                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Full Name:</span>{{UserProfile.user.fname}} {{UserProfile.user.lname}}
                                                 </li>
-                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">E-mail:</span><a class="__cf_email__">{{UserProfile.email}}</a></li>
-                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Phone:</span>{{UserProfile.phonenumber}}
+                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">E-mail:</span><a class="__cf_email__">{{UserProfile.user.email}}</a></li>
+                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Phone:</span>{{UserProfile.user.phonenumber}}
                                                 </li>
-                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Date of Birth:</span>{{UserProfile.dob}}
-                                                </li>
+                                                <!-- <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Date of Birth:</span>{{UserProfile.user.dob}}
+                                                </li> -->
                                                 <!-- <li class="py-2"><span class="text-muted me-2 w90 d-inline-block">Address:</span>http://website.com</li> -->
-                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Country</span> {{UserProfile.nationality}} </li>
-                                                <div *ngIf="UserProfile.verification_status == 'unverified' ">
-                                                    <li class="py-2 d-flex align-items-center"><span class="text-muted me-2 w90 d-inline-block">Verification Status</span> <span class="badge badge-danger">{{UserProfile.verification_status}}</span> </li>
+                                                <li class="py-2 fs-6"><span class="text-muted me-2 w90 d-inline-block">Country</span> {{UserProfile.user.nationality}} </li>
+                                                <div *ngIf="UserProfile.user.verification_status == 'unverified' ">
+                                                    <li class="py-2 d-flex align-items-center"><span class="text-muted me-2 w90 d-inline-block">Verification Status</span> <span class="badge badge-danger">{{UserProfile.user.verification_status}}</span> </li>
                                                 </div>
-                                                <div *ngIf="UserProfile.verification_status !== 'unverified' ">
-                                                    <li class="py-2 d-flex align-items-center"><span class="text-muted me-2 w90 d-inline-block">Verification Status</span> <span class="badge badge-success">{{UserProfile.verification_status}}</span> </li>
+                                                <div *ngIf="UserProfile.user.verification_status !== 'unverified' ">
+                                                    <li class="py-2 d-flex align-items-center"><span class="text-muted me-2 w90 d-inline-block">Verification Status</span> <span class="badge badge-success">{{UserProfile.user.verification_status}}</span> </li>
                                                 </div>
                                             </ul>
                                         </div>
@@ -122,7 +125,7 @@
                                                 </li>
                                             </ul>
                                             <div class=" mt-2 d-flex">
-                                                <input type="text " class="form-control cus-input " value="https://bull-option.com/{{UserProfile.name}}" readonly>
+                                                <input type="text " class="form-control cus-input " value="https://bull-option.com/{{UserProfile.user.name}}" readonly>
                                                 <button class=" btn copy-btn ">
                                                     <i class='bx bx-md bx-copy-alt text-light'></i>
                                                 </button>
@@ -143,7 +146,7 @@
                                         <div class="media-body ms-0 ms-4 ms-xxl-5 text-md-start text-center w-100 mt-4 mt-md-0">
                                             <div class=" g-0 d-flex">
                                                 <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-6 mb-3 mb-lg-0">
-                                                    <a routerLink="/edit-profile/{{UserProfile.id}}#list-item-2">
+                                                    <a routerLink="/edit-profile/{{UserProfile.user.id}}#list-item-2">
                                                         <h6 class="mb-1">Change Password</h6>
                                                         <div class="text-muted">Set a unique password to protect your account.</div>
                                                     </a>
@@ -163,7 +166,7 @@
                                         <div class="media-body ms-0 ms-4 ms-xxl-5 text-md-start text-center w-100 mt-4 mt-md-0">
                                             <div class=" g-0 d-flex">
                                                 <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-6 mb-3 mb-lg-0">
-                                                    <a routerLink="/edit-profile/{{UserProfile.id}}#list-item-3">
+                                                    <a routerLink="/edit-profile/{{UserProfile.user.id}}#list-item-3">
                                                         <h6 class="mb-1">Save Activity Logs</h6>
                                                         <div class="text-muted">You can save your all activity logs including unusual activity detected.</div>
                                                     </a>

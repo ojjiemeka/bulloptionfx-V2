@@ -17,7 +17,10 @@ export class PortfolioComponent implements OnInit {
   public withdrawalForm!: FormGroup
   UserProfile: any = null;
   currency: any;
-  value = 'bc1q67e3fgvhp9rhavjl0m08w08uwuvawkcr3nzdq3';
+  walletAddress: string = '';
+  type: string = '';
+  textToCopy: string = '';
+  addresses: { wallet_address: string, type: string }[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,6 +35,7 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     this.getUserData();
     this.formDeposit();
+    this.showWalletAddress();
     this.formWithdraw();
     this.getCurrencyList();
   }
@@ -43,6 +47,44 @@ export class PortfolioComponent implements OnInit {
     });
   }
 
+  // showWalletAddress() {
+  //   this.userDataService.getWalletAddress().subscribe({
+  //     next: (data) => {
+  //       const addresses = data['address'];
+  //       addresses.forEach((address: { [x: string]: string; }) => {
+  //         this.walletAddress = address['wallet_address'];
+  //         this.type = address['type'];
+  //         console.log(this.walletAddress)
+  //         console.log(this.type)
+  //       });
+  //     }
+  //   });
+  // }
+
+  copyText(text: string) {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        this.toast.show('Copied');
+        console.log(text);
+      })
+      .catch((error) => {
+        console.error('Failed to copy text to clipboard:', error);
+      });
+  }
+
+  showWalletAddress() {
+    this.userDataService.getWalletAddress().subscribe({
+      next: (data) => {
+        const addresses = data['address'];
+        this.addresses = addresses.map((address: { [x: string]: any; }) => ({
+          wallet_address: address['wallet_address'],
+          type: address['type']
+        }));
+      }
+    });
+  }
+  
+ 
   getCurrencyList(){
     this.userDataService.getCurrency().subscribe(data =>{
       this.currency = data.currencies;
@@ -50,9 +92,6 @@ export class PortfolioComponent implements OnInit {
     });
   }
 
-  copy(){
-    this.toast.show("Address Copied Successfully!!");
-  }
 
   formDeposit(){
     this.depositForm = this.formBuilder.group({

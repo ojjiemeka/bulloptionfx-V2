@@ -18,6 +18,8 @@ export class HeaderComponent implements OnInit {
   container: any
   UserProfile: any = [];
   notification: any
+  recipientEmail: string = 'mail.bulloptionfx.com'
+  emailSubject : string = 'Help!!'
 
   
   constructor(
@@ -37,9 +39,10 @@ export class HeaderComponent implements OnInit {
   
 
   getUserData(){
-    this.authService.getUser().subscribe(user =>{
-      this.UserProfile = user.user;
-      // console.log(this.UserProfile)  
+    this.authService.getUser().subscribe(
+      user =>{
+      this.UserProfile = user;
+      // console.log(this.UserProfile.user.fname)  
     });
   }
 
